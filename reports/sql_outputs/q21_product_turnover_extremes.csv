@@ -1,0 +1,21 @@
+grp,product_id,product_name,category,annual_turnover,avg_stock_value_kes,cogs_kes
+Fastest 10,P0022,Shamba Pride Cooking Oil 3L,Staples,36.4,180638.0,13289850.0
+Fastest 10,P0073,Tamu Dairy Cheese 200g,Dairy,35.8,150674.0,10905063.0
+Fastest 10,P0114,Pwani Springs Instant Coffee 100g,Beverages,33.9,60181.0,4120928.0
+Fastest 10,P0082,Savanna Bakery Brown Bread 600g,Bakery,32.0,13466.0,869213.0
+Fastest 10,P0108,Savanna Value Bottled Water 1L,Beverages,31.5,2795.0,177988.0
+Fastest 10,P0107,Tropika Bottled Water 1L,Beverages,31.5,7615.0,483731.0
+Fastest 10,P0088,Savanna Bakery Mandazi 6pc,Bakery,31.3,35564.0,2248769.0
+Fastest 10,P0064,Tamu Dairy Long-life Milk 500ml,Dairy,30.8,22583.0,1405876.0
+Fastest 10,P0144,Savanna Value Dishwashing Liquid 500ml,Household & Cleaning,30.7,18695.0,1159609.0
+Fastest 10,P0061,Tamu Dairy Fresh Milk 500ml,Dairy,30.5,14203.0,875682.0
+Slowest 10,P0097,Kilele Premium Soda 500ml,Beverages,5.9,30828.0,365752.0
+Slowest 10,P0039,Lakeside Organics Tomatoes 1kg,Fresh Produce,5.8,14528.0,169320.0
+Slowest 10,P0134,Safi Home Detergent 1kg,Household & Cleaning,5.0,130788.0,1326832.0
+Slowest 10,P0200,Savanna Value Baby Cereal 400g,Baby Care,4.9,31234.0,309960.0
+Slowest 10,P0187,Velvet Cocoa Assorted Sweets 250g,Snacks & Confectionery,4.3,13235.0,114277.0
+Slowest 10,P0178,Savanna Value Biscuits 200g,Snacks & Confectionery,4.1,30563.0,253547.0
+Slowest 10,P0168,Savanna Value Roll-on Deodorant,Personal Care,3.7,32139.0,241204.0
+Slowest 10,P0147,Nyota Clean Toilet Paper 10pk,Household & Cleaning,3.3,246772.0,1665636.0
+Slowest 10,P0171,Savanna Value Hair Food 250g,Personal Care,3.3,1896.0,12576.0
+Slowest 10,P0167,Lulu Beauty Roll-on Deodorant,Personal Care,2.3,14247.0,65428.0

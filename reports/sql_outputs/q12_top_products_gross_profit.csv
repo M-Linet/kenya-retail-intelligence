@@ -1,0 +1,21 @@
+gp_rank,product_id,product_name,category,revenue_kes,gross_profit_kes,gross_margin_pct,units,cumulative_gp_share_pct
+1,P0037,Savanna Farm Tomatoes 1kg,Fresh Produce,10380018.0,3535037.0,34.06,89594,3.88
+2,P0192,Mtoto Soft Diapers 40pk,Baby Care,12103403.0,2344812.0,19.37,9207,6.45
+3,P0073,Tamu Dairy Cheese 200g,Dairy,13054514.0,2149451.0,16.47,29740,8.8
+4,P0130,Safi Home Bar Soap 800g,Household & Cleaning,9214516.0,2147456.0,23.31,45500,11.16
+5,P0102,Pwani Springs Fruit Juice 1L,Beverages,10276441.0,2142873.0,20.85,45189,13.51
+6,P0193,Little Star Diapers 40pk,Baby Care,9392216.0,1890272.0,20.13,6238,15.58
+7,P0038,Highland Growers Tomatoes 1kg,Fresh Produce,5516956.0,1765410.0,32.0,42607,17.52
+8,P0157,Afya Care Body Lotion 400ml,Personal Care,5627460.0,1727367.0,30.7,14724,19.41
+9,P0074,Rift Creamery Cheese 200g,Dairy,9134929.0,1705191.0,18.67,19288,21.28
+10,P0013,Mlima Gold Sugar 2kg,Staples,13753239.0,1640657.0,11.93,41029,23.08
+11,P0114,Pwani Springs Instant Coffee 100g,Beverages,5585026.0,1464098.0,26.21,13956,24.69
+12,P0103,Tropika Fruit Juice 1L,Beverages,7142563.0,1290233.0,18.06,30069,26.1
+13,P0022,Shamba Pride Cooking Oil 3L,Staples,14461774.0,1171924.0,8.1,17110,27.39
+14,P0132,Savanna Value Bar Soap 800g,Household & Cleaning,3929435.0,1140042.0,29.01,22739,28.64
+15,P0142,Safi Home Dishwashing Liquid 500ml,Household & Cleaning,4312947.0,1135227.0,26.32,29116,29.88
+16,P0111,Tropika Tea Leaves 250g,Beverages,4806110.0,1128768.0,23.49,31077,31.12
+17,P0158,Lulu Beauty Body Lotion 400ml,Personal Care,3623874.0,1073901.0,29.63,8137,32.3
+18,P0076,Tamu Dairy Eggs Tray 30,Dairy,9099122.0,1014235.0,11.15,19890,33.41
+19,P0122,Kuku Fresh Whole Chicken,Meat & Poultry,4525670.0,996216.0,22.01,6596,34.5
+20,P0021,Mlima Gold Cooking Oil 3L,Staples,18666433.0,987950.0,5.29,20219,35.59

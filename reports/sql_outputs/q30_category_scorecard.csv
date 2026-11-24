@@ -1,0 +1,11 @@
+category,gp_share_pct,gross_margin_pct,lfl_gp_growth_pct,stockout_rate_pct,slow_stock_value_kes,slow_share_of_category_stock_pct
+Staples,16.59,9.93,9.1,10.25,4041.0,0.1
+Beverages,14.81,22.31,8.1,11.44,12494.0,1.2
+Household & Cleaning,14.31,24.47,-2.6,8.57,386494.0,31.6
+Fresh Produce,12.95,33.12,8.2,8.45,0.0,0.0
+Dairy,12.15,15.39,5.3,7.63,0.0,0.0
+Baby Care,7.21,19.69,8.1,7.53,1814.0,0.4
+Meat & Poultry,6.7,18.55,7.9,8.61,732.0,0.1
+Personal Care,5.99,31.29,5.9,7.85,44798.0,9.6
+Bakery,4.98,25.16,7.7,7.42,0.0,0.0
+Snacks & Confectionery,4.31,28.19,3.7,7.55,46661.0,18.6

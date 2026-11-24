@@ -1,0 +1,7 @@
+table_name,raw_rows,distinct_keys
+customers,9090,9000
+inventory,249985,249487
+products,203,203
+promotions,110,110
+transaction_items,1205079,1201475
+transactions,291157,289998

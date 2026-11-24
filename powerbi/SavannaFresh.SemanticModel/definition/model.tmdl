@@ -1,0 +1,29 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.138.1203.0 (24.11)
+
+annotation PBI_QueryOrder = ["_Measures","dim_date","dim_branch","dim_product","dim_customer","dim_promotion","fact_sales","fact_inventory","fact_inventory_position","promo_performance","DataFolder"]
+
+ref table _Measures
+ref table dim_date
+ref table dim_branch
+ref table dim_product
+ref table dim_customer
+ref table dim_promotion
+ref table fact_sales
+ref table fact_inventory
+ref table fact_inventory_position
+ref table promo_performance
+
+ref cultureInfo en-US
+

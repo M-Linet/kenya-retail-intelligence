@@ -1,0 +1,83 @@
+table fact_inventory
+	lineageTag: 802ee338-62a0-58e7-9bfb-cfab43f243ce
+
+	column inventory_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ff1a692b-47a2-57f4-a2e8-c3a4679ccb9e
+		summarizeBy: none
+		sourceColumn: inventory_id
+
+	column snapshot_date
+		dataType: dateTime
+		isHidden
+		formatString: dd mmm yyyy
+		lineageTag: 0e13df13-cc41-5fc4-8f46-35a7b57828e8
+		summarizeBy: none
+		sourceColumn: snapshot_date
+
+	column branch_id
+		dataType: string
+		isHidden
+		lineageTag: 1dbf5a58-8bf8-5913-a898-bba9a216f963
+		summarizeBy: none
+		sourceColumn: branch_id
+
+	column product_id
+		dataType: string
+		isHidden
+		lineageTag: c6f70f5a-3b10-5f6e-b8b4-bceef4b8d7a5
+		summarizeBy: none
+		sourceColumn: product_id
+
+	column stock_quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: fbc18de9-b384-5772-b5eb-07b9964e1ca0
+		summarizeBy: sum
+		sourceColumn: stock_quantity
+
+	column reorder_level
+		dataType: int64
+		formatString: 0
+		lineageTag: 0ab5c586-df19-5554-bdce-e7db78e7bca9
+		summarizeBy: none
+		sourceColumn: reorder_level
+
+	column stock_value_at_cost
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: fb39e11a-46e3-5b9a-9162-62369c11e03c
+		summarizeBy: sum
+		sourceColumn: stock_value_at_cost
+
+	column units_sold_in_week
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b882825-7372-5ec7-9278-3daa159f6ebc
+		summarizeBy: sum
+		sourceColumn: units_sold_in_week
+
+	column is_stockout
+		dataType: boolean
+		lineageTag: bb515720-b841-5792-b5ec-f4adafc2d7f0
+		summarizeBy: none
+		sourceColumn: is_stockout
+
+	column at_or_below_reorder
+		dataType: boolean
+		lineageTag: 2e3703a9-2583-5362-839d-bed11a773a5f
+		summarizeBy: none
+		sourceColumn: at_or_below_reorder
+
+	partition fact_inventory = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "fact_inventory.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"inventory_id", Int64.Type}, {"snapshot_date", type date}, {"branch_id", type text}, {"product_id", type text}, {"stock_quantity", Int64.Type}, {"reorder_level", Int64.Type}, {"stock_value_at_cost", Currency.Type}, {"units_sold_in_week", Int64.Type}, {"is_stockout", type logical}, {"at_or_below_reorder", type logical}}, "en-US")
+				in
+				    Typed
+

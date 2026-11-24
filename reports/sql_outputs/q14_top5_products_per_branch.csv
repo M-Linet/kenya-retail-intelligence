@@ -1,0 +1,61 @@
+branch_id,branch_name,rank_in_branch,product_id,product_name,category,gross_profit_kes,revenue_kes
+BR01,Savanna Fresh Westlands,1,P0037,Savanna Farm Tomatoes 1kg,Fresh Produce,665571.0,1943284.0
+BR01,Savanna Fresh Westlands,2,P0073,Tamu Dairy Cheese 200g,Dairy,531267.0,3179063.0
+BR01,Savanna Fresh Westlands,3,P0193,Little Star Diapers 40pk,Baby Care,337059.0,1651523.0
+BR01,Savanna Fresh Westlands,4,P0074,Rift Creamery Cheese 200g,Dairy,331516.0,1754060.0
+BR01,Savanna Fresh Westlands,5,P0013,Mlima Gold Sugar 2kg,Staples,306603.0,2511306.0
+BR02,Savanna Fresh Embakasi,1,P0102,Pwani Springs Fruit Juice 1L,Beverages,289583.0,1365383.0
+BR02,Savanna Fresh Embakasi,2,P0037,Savanna Farm Tomatoes 1kg,Fresh Produce,265267.0,771112.0
+BR02,Savanna Fresh Embakasi,3,P0192,Mtoto Soft Diapers 40pk,Baby Care,222215.0,1134798.0
+BR02,Savanna Fresh Embakasi,4,P0073,Tamu Dairy Cheese 200g,Dairy,221039.0,1338680.0
+BR02,Savanna Fresh Embakasi,5,P0013,Mlima Gold Sugar 2kg,Staples,207644.0,1691420.0
+BR03,Savanna Fresh Kasarani,1,P0037,Savanna Farm Tomatoes 1kg,Fresh Produce,173818.0,506005.0
+BR03,Savanna Fresh Kasarani,2,P0074,Rift Creamery Cheese 200g,Dairy,137092.0,715662.0
+BR03,Savanna Fresh Kasarani,3,P0192,Mtoto Soft Diapers 40pk,Baby Care,111753.0,570694.0
+BR03,Savanna Fresh Kasarani,4,P0073,Tamu Dairy Cheese 200g,Dairy,106467.0,645854.0
+BR03,Savanna Fresh Kasarani,5,P0102,Pwani Springs Fruit Juice 1L,Beverages,91062.0,434303.0
+BR04,Savanna Fresh Nyali,1,P0037,Savanna Farm Tomatoes 1kg,Fresh Produce,516854.0,1566896.0
+BR04,Savanna Fresh Nyali,2,P0102,Pwani Springs Fruit Juice 1L,Beverages,341731.0,1762752.0
+BR04,Savanna Fresh Nyali,3,P0130,Safi Home Bar Soap 800g,Household & Cleaning,330578.0,1525144.0
+BR04,Savanna Fresh Nyali,4,P0038,Highland Growers Tomatoes 1kg,Fresh Produce,326504.0,1058640.0
+BR04,Savanna Fresh Nyali,5,P0193,Little Star Diapers 40pk,Baby Care,306433.0,1631720.0
+BR05,Savanna Fresh Mombasa CBD,1,P0037,Savanna Farm Tomatoes 1kg,Fresh Produce,307988.0,900623.0
+BR05,Savanna Fresh Mombasa CBD,2,P0130,Safi Home Bar Soap 800g,Household & Cleaning,265547.0,1123224.0
+BR05,Savanna Fresh Mombasa CBD,3,P0192,Mtoto Soft Diapers 40pk,Baby Care,211376.0,1079442.0
+BR05,Savanna Fresh Mombasa CBD,4,P0193,Little Star Diapers 40pk,Baby Care,208465.0,1021436.0
+BR05,Savanna Fresh Mombasa CBD,5,P0157,Afya Care Body Lotion 400ml,Personal Care,190473.0,615076.0
+BR06,Savanna Fresh Kisumu,1,P0130,Safi Home Bar Soap 800g,Household & Cleaning,273414.0,1155476.0
+BR06,Savanna Fresh Kisumu,2,P0102,Pwani Springs Fruit Juice 1L,Beverages,238565.0,1113316.0
+BR06,Savanna Fresh Kisumu,3,P0037,Savanna Farm Tomatoes 1kg,Fresh Produce,218644.0,638691.0
+BR06,Savanna Fresh Kisumu,4,P0157,Afya Care Body Lotion 400ml,Personal Care,211353.0,684164.0
+BR06,Savanna Fresh Kisumu,5,P0192,Mtoto Soft Diapers 40pk,Baby Care,184276.0,941052.0
+BR07,Savanna Fresh Nakuru,1,P0037,Savanna Farm Tomatoes 1kg,Fresh Produce,548994.0,1605377.0
+BR07,Savanna Fresh Nakuru,2,P0192,Mtoto Soft Diapers 40pk,Baby Care,405201.0,2069260.0
+BR07,Savanna Fresh Nakuru,3,P0102,Pwani Springs Fruit Juice 1L,Beverages,305912.0,1451188.0
+BR07,Savanna Fresh Nakuru,4,P0022,Shamba Pride Cooking Oil 3L,Staples,281150.0,3388847.0
+BR07,Savanna Fresh Nakuru,5,P0073,Tamu Dairy Cheese 200g,Dairy,251608.0,1504187.0
+BR08,Savanna Fresh Naivasha,1,P0192,Mtoto Soft Diapers 40pk,Baby Care,109688.0,560150.0
+BR08,Savanna Fresh Naivasha,2,P0037,Savanna Farm Tomatoes 1kg,Fresh Produce,107105.0,312315.0
+BR08,Savanna Fresh Naivasha,3,P0073,Tamu Dairy Cheese 200g,Dairy,102775.0,619427.0
+BR08,Savanna Fresh Naivasha,4,P0102,Pwani Springs Fruit Juice 1L,Beverages,87396.0,413178.0
+BR08,Savanna Fresh Naivasha,5,P0130,Safi Home Bar Soap 800g,Household & Cleaning,83248.0,350554.0
+BR09,Savanna Fresh Thika,1,P0037,Savanna Farm Tomatoes 1kg,Fresh Produce,262120.0,763839.0
+BR09,Savanna Fresh Thika,2,P0192,Mtoto Soft Diapers 40pk,Baby Care,230216.0,1175656.0
+BR09,Savanna Fresh Thika,3,P0193,Little Star Diapers 40pk,Baby Care,225426.0,1104541.0
+BR09,Savanna Fresh Thika,4,P0074,Rift Creamery Cheese 200g,Dairy,208773.0,1104363.0
+BR09,Savanna Fresh Thika,5,P0130,Safi Home Bar Soap 800g,Household & Cleaning,183078.0,771120.0
+BR10,Savanna Fresh Ruiru,1,P0130,Safi Home Bar Soap 800g,Household & Cleaning,96522.0,414773.0
+BR10,Savanna Fresh Ruiru,2,P0037,Savanna Farm Tomatoes 1kg,Fresh Produce,91801.0,270272.0
+BR10,Savanna Fresh Ruiru,3,P0102,Pwani Springs Fruit Juice 1L,Beverages,83881.0,388785.0
+BR10,Savanna Fresh Ruiru,4,P0157,Afya Care Body Lotion 400ml,Personal Care,79700.0,258759.0
+BR10,Savanna Fresh Ruiru,5,P0192,Mtoto Soft Diapers 40pk,Baby Care,69684.0,355860.0
+BR11,Savanna Fresh Eldoret,1,P0037,Savanna Farm Tomatoes 1kg,Fresh Produce,231891.0,679901.0
+BR11,Savanna Fresh Eldoret,2,P0192,Mtoto Soft Diapers 40pk,Baby Care,216279.0,1104484.0
+BR11,Savanna Fresh Eldoret,3,P0157,Afya Care Body Lotion 400ml,Personal Care,160187.0,520424.0
+BR11,Savanna Fresh Eldoret,4,P0193,Little Star Diapers 40pk,Baby Care,145864.0,714703.0
+BR11,Savanna Fresh Eldoret,5,P0130,Safi Home Bar Soap 800g,Household & Cleaning,128036.0,541498.0
+BR12,Savanna Fresh Machakos,1,P0037,Savanna Farm Tomatoes 1kg,Fresh Produce,144984.0,421705.0
+BR12,Savanna Fresh Machakos,2,P0192,Mtoto Soft Diapers 40pk,Baby Care,89299.0,456028.0
+BR12,Savanna Fresh Machakos,3,P0074,Rift Creamery Cheese 200g,Dairy,79480.0,416915.0
+BR12,Savanna Fresh Machakos,4,P0038,Highland Growers Tomatoes 1kg,Fresh Produce,72120.0,224535.0
+BR12,Savanna Fresh Machakos,5,P0157,Afya Care Body Lotion 400ml,Personal Care,63714.0,207015.0

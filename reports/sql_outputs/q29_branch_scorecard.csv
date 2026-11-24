@@ -1,0 +1,13 @@
+branch_id,branch_name,branch_type,revenue_kes,yoy_growth_pct,gross_margin_pct,non_promo_discount_pct,stockout_rate_pct,slow_stock_share_pct,flags
+BR04,Savanna Fresh Nyali,Hypermarket,66514567.0,7.5,17.41,2.58,5.93,3.3,Margin >1pt below chain; High non-promo discounting
+BR06,Savanna Fresh Kisumu,Supermarket,37519873.0,5.1,19.17,0.4,23.42,7.2,Stockout rate >10%
+BR11,Savanna Fresh Eldoret,Supermarket,36156495.0,3.0,19.09,0.36,18.94,14.0,Stockout rate >10%
+BR08,Savanna Fresh Naivasha,Express,17718880.0,7.3,19.36,0.4,10.29,9.6,Stockout rate >10%
+BR12,Savanna Fresh Machakos,Express,17386934.0,-11.9,19.35,0.46,6.77,8.4,Declining sales
+BR01,Savanna Fresh Westlands,Hypermarket,75867420.0,8.5,18.83,0.42,4.92,3.7,No flags
+BR07,Savanna Fresh Nakuru,Hypermarket,64902358.0,7.7,18.51,0.36,6.2,5.7,No flags
+BR02,Savanna Fresh Embakasi,Supermarket,48159624.0,7.8,18.72,0.36,5.88,4.7,No flags
+BR05,Savanna Fresh Mombasa CBD,Supermarket,42928890.0,6.2,18.7,0.38,5.53,7.4,No flags
+BR09,Savanna Fresh Thika,Supermarket,41177192.0,9.3,18.74,0.38,5.4,4.1,No flags
+BR03,Savanna Fresh Kasarani,Express,23990091.0,4.9,18.56,0.4,6.99,3.1,No flags
+BR10,Savanna Fresh Ruiru,Express,17316090.0,,18.52,0.39,3.88,5.2,No flags

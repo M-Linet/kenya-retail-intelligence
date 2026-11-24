@@ -1,0 +1,37 @@
+branch_id,reorder_cover_band,branch_product_pairs,avg_stockout_rate_pct
+BR01,0.75-1.25 wk,13,6.81
+BR01,>= 1.25 wk demand,177,2.16
+BR01,Reorder level < 0.75 wk demand,12,39.76
+BR02,0.75-1.25 wk,18,6.4
+BR02,>= 1.25 wk demand,176,4.27
+BR02,Reorder level < 0.75 wk demand,8,40.24
+BR03,0.75-1.25 wk,4,8.81
+BR03,>= 1.25 wk demand,188,5.31
+BR03,Reorder level < 0.75 wk demand,10,36.29
+BR04,0.75-1.25 wk,8,8.21
+BR04,>= 1.25 wk demand,176,2.81
+BR04,Reorder level < 0.75 wk demand,18,33.44
+BR05,0.75-1.25 wk,11,7.97
+BR05,>= 1.25 wk demand,186,4.32
+BR05,Reorder level < 0.75 wk demand,6,38.57
+BR06,0.75-1.25 wk,12,21.59
+BR06,>= 1.25 wk demand,171,19.83
+BR06,Reorder level < 0.75 wk demand,19,55.09
+BR07,0.75-1.25 wk,16,7.92
+BR07,>= 1.25 wk demand,170,3.48
+BR07,Reorder level < 0.75 wk demand,16,32.74
+BR08,0.75-1.25 wk,14,10.82
+BR08,>= 1.25 wk demand,169,6.78
+BR08,Reorder level < 0.75 wk demand,18,40.95
+BR09,0.75-1.25 wk,18,7.88
+BR09,>= 1.25 wk demand,179,4.35
+BR09,Reorder level < 0.75 wk demand,4,30.0
+BR10,0.75-1.25 wk,3,9.01
+BR10,>= 1.25 wk demand,190,2.52
+BR10,Reorder level < 0.75 wk demand,8,26.69
+BR11,0.75-1.25 wk,3,26.67
+BR11,>= 1.25 wk demand,189,16.78
+BR11,Reorder level < 0.75 wk demand,11,53.94
+BR12,0.75-1.25 wk,3,8.89
+BR12,>= 1.25 wk demand,188,4.99
+BR12,Reorder level < 0.75 wk demand,11,36.02

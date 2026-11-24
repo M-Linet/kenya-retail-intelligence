@@ -1,0 +1,45 @@
+table dim_promotion
+	lineageTag: dbbee8e1-6d79-5c75-9d84-379f7a2ab665
+
+	column promotion_id
+		dataType: string
+		lineageTag: 566c3134-96d1-56dc-8c5c-82d6db474ae8
+		summarizeBy: none
+		sourceColumn: promotion_id
+
+	column product_id
+		dataType: string
+		lineageTag: 5f169ebd-fbab-51b6-ba2c-db6ddd78bc59
+		summarizeBy: none
+		sourceColumn: product_id
+
+	column start_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 084f0894-d2c4-5c6f-8157-e67885595f74
+		summarizeBy: none
+		sourceColumn: start_date
+
+	column end_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: d57314d4-cf24-5d47-b479-f140a19dcbc3
+		summarizeBy: none
+		sourceColumn: end_date
+
+	column discount_percentage
+		dataType: double
+		lineageTag: 7bcafe7a-7257-5a9d-b456-fa4d29385d58
+		summarizeBy: none
+		sourceColumn: discount_percentage
+
+	partition dim_promotion = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "dim_promotion.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"promotion_id", type text}, {"product_id", type text}, {"start_date", type date}, {"end_date", type date}, {"discount_percentage", type number}}, "en-US")
+				in
+				    Typed
+

@@ -1,0 +1,12 @@
+check_name,failures
+duplicate transaction_id,0
+items without a transaction,0
+transactions outside period,0
+transactions before branch opening,0
+purchases before customer registration,0
+non-positive quantity or price,0
+discount greater than line value,0
+promotion line outside promotion dates,0
+promotion line for a different product,0
+inventory snapshot for unopened branch,0
+non-canonical category labels,0

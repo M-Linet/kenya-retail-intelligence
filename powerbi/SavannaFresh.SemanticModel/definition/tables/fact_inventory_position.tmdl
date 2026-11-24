@@ -1,0 +1,80 @@
+table fact_inventory_position
+	lineageTag: 8a785946-8242-5991-934f-5b76feddb71d
+
+	column branch_id
+		dataType: string
+		isHidden
+		lineageTag: 7357cca7-da34-5f87-bf13-862cecbf093e
+		summarizeBy: none
+		sourceColumn: branch_id
+
+	column product_id
+		dataType: string
+		isHidden
+		lineageTag: dcee5917-b5db-5c78-9869-dcf6ca1e7ae1
+		summarizeBy: none
+		sourceColumn: product_id
+
+	column snapshot_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: b06af258-1592-5751-9a62-ad551358103d
+		summarizeBy: none
+		sourceColumn: snapshot_date
+
+	column stock_quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 4045f06b-4baa-5ce8-9286-ff6a01f935c1
+		summarizeBy: sum
+		sourceColumn: stock_quantity
+
+	column reorder_level
+		dataType: int64
+		formatString: 0
+		lineageTag: 5c540200-98f0-5dbe-bd9f-fda405ebe0c2
+		summarizeBy: none
+		sourceColumn: reorder_level
+
+	column stock_value_at_cost
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: a3de7258-80b5-5352-a4ba-47126842e84e
+		summarizeBy: sum
+		sourceColumn: stock_value_at_cost
+
+	column avg_weekly_units_12w
+		dataType: double
+		lineageTag: 5ec1c159-f2a1-598c-8fe0-b8c41e94a620
+		summarizeBy: sum
+		sourceColumn: avg_weekly_units_12w
+
+	column stockout_weeks_12w
+		dataType: int64
+		formatString: 0
+		lineageTag: 81aeb650-9bfa-5901-9c29-d2945bddece4
+		summarizeBy: none
+		sourceColumn: stockout_weeks_12w
+
+	column weeks_of_cover
+		dataType: double
+		lineageTag: 0cbd5921-424e-52ed-94ab-6ede778ee111
+		summarizeBy: sum
+		sourceColumn: weeks_of_cover
+
+	column stock_status
+		dataType: string
+		lineageTag: 12050cbb-a5c9-5a03-9b30-22e8f6ade2b7
+		summarizeBy: none
+		sourceColumn: stock_status
+
+	partition fact_inventory_position = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "fact_inventory_position.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"branch_id", type text}, {"product_id", type text}, {"snapshot_date", type date}, {"stock_quantity", Int64.Type}, {"reorder_level", Int64.Type}, {"stock_value_at_cost", Currency.Type}, {"avg_weekly_units_12w", type number}, {"stockout_weeks_12w", Int64.Type}, {"weeks_of_cover", type number}, {"stock_status", type text}}, "en-US")
+				in
+				    Typed
+

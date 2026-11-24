@@ -1,0 +1,4 @@
+relationship,orphan_rows
+transactions -> branches,40
+transactions -> customers,0
+items -> products,0

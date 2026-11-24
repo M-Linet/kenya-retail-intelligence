@@ -1,0 +1,13 @@
+branch_id,branch_name,county,branch_product_weeks,stockout_weeks,stockout_rate_pct,stockout_rate_last_13w_pct,worst_rank
+BR06,Savanna Fresh Kisumu,Kisumu,21315,4992,23.42,24.4,1
+BR11,Savanna Fresh Eldoret,Uasin Gishu,21315,4036,18.94,20.65,2
+BR08,Savanna Fresh Naivasha,Nakuru,21315,2194,10.29,10.61,3
+BR03,Savanna Fresh Kasarani,Nairobi,21315,1489,6.99,7.77,4
+BR12,Savanna Fresh Machakos,Machakos,21315,1444,6.77,5.76,5
+BR07,Savanna Fresh Nakuru,Nakuru,21315,1321,6.2,6.18,6
+BR04,Savanna Fresh Nyali,Mombasa,21315,1263,5.93,6.03,7
+BR02,Savanna Fresh Embakasi,Nairobi,21315,1253,5.88,6.06,8
+BR05,Savanna Fresh Mombasa CBD,Mombasa,21315,1178,5.53,5.8,9
+BR09,Savanna Fresh Thika,Kiambu,21315,1150,5.4,5.23,10
+BR01,Savanna Fresh Westlands,Nairobi,21315,1049,4.92,5.46,11
+BR10,Savanna Fresh Ruiru,Kiambu,15022,583,3.88,4.55,12

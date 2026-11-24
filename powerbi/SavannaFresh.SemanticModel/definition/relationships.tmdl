@@ -1,0 +1,44 @@
+relationship 21a67baa-520f-59d0-8031-044f952cfeea
+	fromColumn: fact_sales.sale_date
+	toColumn: dim_date.date
+
+relationship 58762946-6a04-5c6d-866c-82084e64fc56
+	fromColumn: fact_sales.branch_id
+	toColumn: dim_branch.branch_id
+
+relationship 4cdb5a0b-7e43-5526-acb6-5848d523f504
+	fromColumn: fact_sales.product_id
+	toColumn: dim_product.product_id
+
+relationship 684c5bca-1f03-52e9-9dfd-be44833c006b
+	fromColumn: fact_sales.customer_key
+	toColumn: dim_customer.customer_key
+
+relationship d4650ef0-8335-5e57-adad-659575b96fcf
+	fromColumn: fact_sales.promotion_id
+	toColumn: dim_promotion.promotion_id
+
+relationship c9d6eb8a-26e5-5206-88a2-318ab5ed613d
+	fromColumn: fact_inventory.snapshot_date
+	toColumn: dim_date.date
+
+relationship b4c6be44-d0ff-5965-bd84-23eaddaab9c0
+	fromColumn: fact_inventory.branch_id
+	toColumn: dim_branch.branch_id
+
+relationship cbe450fb-537b-5fdc-bf89-ff618347bcff
+	fromColumn: fact_inventory.product_id
+	toColumn: dim_product.product_id
+
+relationship 6ebe26c0-de0a-5daa-b133-1a97cd29e37f
+	fromColumn: fact_inventory_position.branch_id
+	toColumn: dim_branch.branch_id
+
+relationship 1bdcf6e7-c677-54ba-938b-2b6753d5d589
+	fromColumn: fact_inventory_position.product_id
+	toColumn: dim_product.product_id
+
+relationship cf35df13-101d-58da-9691-134e215f785b
+	fromColumn: promo_performance.product_id
+	toColumn: dim_product.product_id
+

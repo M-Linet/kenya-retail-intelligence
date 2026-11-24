@@ -1,0 +1,62 @@
+table dim_branch
+	lineageTag: de644d7d-c58b-593a-9952-5249ea86cc3f
+
+	column branch_id
+		dataType: string
+		lineageTag: 71395c32-6e73-5506-bbd0-8f7089c00501
+		summarizeBy: none
+		sourceColumn: branch_id
+
+	column branch_name
+		dataType: string
+		lineageTag: 08373fb9-2880-5861-a981-0df1e2c2b5ce
+		summarizeBy: none
+		sourceColumn: branch_name
+
+	column branch_short
+		dataType: string
+		lineageTag: 272c4b35-371e-5f51-8adf-4b82fdb5b63e
+		summarizeBy: none
+		sourceColumn: branch_short
+
+	column county
+		dataType: string
+		lineageTag: 5b60db8d-1906-5ac6-a142-8bbe8b224f8d
+		summarizeBy: none
+		sourceColumn: county
+
+	column town
+		dataType: string
+		lineageTag: b1b7512f-447b-5082-872d-458bd0b08394
+		summarizeBy: none
+		sourceColumn: town
+
+	column branch_type
+		dataType: string
+		lineageTag: f7dc994f-2721-5352-a18c-4c62e7ca0076
+		summarizeBy: none
+		sourceColumn: branch_type
+
+	column opening_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: f8f873b2-d389-5e26-9fa5-e1395f13157d
+		summarizeBy: none
+		sourceColumn: opening_date
+
+	column is_like_for_like
+		dataType: boolean
+		lineageTag: e40062c0-bab2-5e98-be1f-7f94b6f14971
+		summarizeBy: none
+		sourceColumn: is_like_for_like
+
+	partition dim_branch = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "dim_branch.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"branch_id", type text}, {"branch_name", type text}, {"branch_short", type text}, {"county", type text}, {"town", type text}, {"branch_type", type text}, {"opening_date", type date}, {"is_like_for_like", type logical}}, "en-US")
+				in
+				    Typed
+

@@ -1,0 +1,5 @@
+quantity_band,lines,min_q,max_q
+a) negative (return),3006,-3,-1
+b) 1-10,1186774,1,10
+c) 11-60,15239,11,52
+e) 100+,60,100,400

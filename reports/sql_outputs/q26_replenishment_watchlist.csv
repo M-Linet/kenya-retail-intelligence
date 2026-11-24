@@ -1,0 +1,31 @@
+branch_id,product_id,product_name,category,stockout_weeks_12w,latest_stock,reorder_level,weekly_units_when_in_stock,gp_per_selling_week_kes
+BR01,P0192,Mtoto Soft Diapers 40pk,Baby Care,4,9,3,12.0,3097.0
+BR07,P0073,Tamu Dairy Cheese 200g,Dairy,5,0,11,38.5,2836.0
+BR11,P0037,Savanna Farm Tomatoes 1kg,Fresh Produce,3,5,93,67.1,2653.0
+BR04,P0073,Tamu Dairy Cheese 200g,Dairy,7,0,10,41.2,2631.0
+BR02,P0073,Tamu Dairy Cheese 200g,Dairy,5,0,9,36.3,2629.0
+BR06,P0037,Savanna Farm Tomatoes 1kg,Fresh Produce,4,0,77,59.1,2351.0
+BR07,P0157,Afya Care Body Lotion 400ml,Personal Care,4,8,5,17.8,2097.0
+BR06,P0192,Mtoto Soft Diapers 40pk,Baby Care,3,0,11,7.9,2039.0
+BR11,P0073,Tamu Dairy Cheese 200g,Dairy,7,0,8,25.7,1868.0
+BR06,P0073,Tamu Dairy Cheese 200g,Dairy,4,44,33,24.0,1769.0
+BR11,P0130,Safi Home Bar Soap 800g,Household & Cleaning,3,82,42,33.2,1597.0
+BR11,P0038,Highland Growers Tomatoes 1kg,Fresh Produce,4,0,37,31.4,1302.0
+BR07,P0077,Rift Creamery Eggs Tray 30,Dairy,6,0,8,25.7,1221.0
+BR06,P0114,Pwani Springs Instant Coffee 100g,Beverages,3,24,18,11.5,1219.0
+BR11,P0103,Tropika Fruit Juice 1L,Beverages,4,15,36,27.9,1218.0
+BR06,P0043,Savanna Farm Potatoes 2kg,Fresh Produce,4,14,30,19.8,1193.0
+BR11,P0110,Pwani Springs Tea Leaves 250g,Beverages,3,25,63,37.3,1091.0
+BR07,P0070,Tamu Dairy Butter 250g,Dairy,6,0,6,18.7,1082.0
+BR11,P0043,Savanna Farm Potatoes 2kg,Fresh Produce,3,38,26,17.4,1049.0
+BR06,P0110,Pwani Springs Tea Leaves 250g,Beverages,3,0,46,33.6,1030.0
+BR06,P0158,Lulu Beauty Body Lotion 400ml,Personal Care,3,10,9,7.7,1027.0
+BR10,P0038,Highland Growers Tomatoes 1kg,Fresh Produce,3,31,7,24.2,1022.0
+BR11,P0159,Savanna Value Body Lotion 400ml,Personal Care,5,0,8,9.3,995.0
+BR06,P0013,Mlima Gold Sugar 2kg,Staples,3,14,26,23.8,988.0
+BR06,P0017,Mlima Gold Cooking Oil 1L,Staples,4,13,21,20.8,969.0
+BR11,P0017,Mlima Gold Cooking Oil 1L,Staples,6,36,20,19.0,896.0
+BR11,P0146,Safi Home Toilet Paper 10pk,Household & Cleaning,3,15,17,9.0,877.0
+BR11,P0142,Safi Home Dishwashing Liquid 500ml,Household & Cleaning,3,13,33,22.0,872.0
+BR06,P0146,Safi Home Toilet Paper 10pk,Household & Cleaning,3,16,13,8.8,858.0
+BR06,P0070,Tamu Dairy Butter 250g,Dairy,3,16,20,14.4,845.0

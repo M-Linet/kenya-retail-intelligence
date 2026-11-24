@@ -1,0 +1,263 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.4.0/schema.json",
+  "name": "5212ff10598374b6f3c7",
+  "position": {
+    "x": 20,
+    "y": 455,
+    "z": 15,
+    "height": 260,
+    "width": 1240,
+    "tabOrder": 15
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_branch"
+                    }
+                  },
+                  "Property": "branch_short"
+                }
+              },
+              "queryRef": "dim_branch.branch_short",
+              "nativeQueryRef": "branch_short"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_product"
+                    }
+                  },
+                  "Property": "product_name"
+                }
+              },
+              "queryRef": "dim_product.product_name",
+              "nativeQueryRef": "product_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_product"
+                    }
+                  },
+                  "Property": "category"
+                }
+              },
+              "queryRef": "dim_product.category",
+              "nativeQueryRef": "category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_inventory_position"
+                    }
+                  },
+                  "Property": "stock_status"
+                }
+              },
+              "queryRef": "fact_inventory_position.stock_status",
+              "nativeQueryRef": "stock_status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_inventory_position"
+                    }
+                  },
+                  "Property": "stock_quantity"
+                }
+              },
+              "queryRef": "fact_inventory_position.stock_quantity",
+              "nativeQueryRef": "stock_quantity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_inventory_position"
+                    }
+                  },
+                  "Property": "reorder_level"
+                }
+              },
+              "queryRef": "fact_inventory_position.reorder_level",
+              "nativeQueryRef": "reorder_level"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_inventory_position"
+                    }
+                  },
+                  "Property": "avg_weekly_units_12w"
+                }
+              },
+              "queryRef": "fact_inventory_position.avg_weekly_units_12w",
+              "nativeQueryRef": "avg_weekly_units_12w"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_inventory_position"
+                    }
+                  },
+                  "Property": "weeks_of_cover"
+                }
+              },
+              "queryRef": "fact_inventory_position.weeks_of_cover",
+              "nativeQueryRef": "weeks_of_cover"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_inventory_position"
+                    }
+                  },
+                  "Property": "stockout_weeks_12w"
+                }
+              },
+              "queryRef": "fact_inventory_position.stockout_weeks_12w",
+              "nativeQueryRef": "stockout_weeks_12w"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_inventory_position"
+                    }
+                  },
+                  "Property": "stock_value_at_cost"
+                }
+              },
+              "queryRef": "fact_inventory_position.stock_value_at_cost",
+              "nativeQueryRef": "stock_value_at_cost"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_inventory_position"
+                  }
+                },
+                "Property": "stock_value_at_cost"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Action list: every branch-product not in a healthy position (latest count)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6e9398b94f1036a6fa58",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_inventory_position"
+              }
+            },
+            "Property": "stock_status"
+          }
+        },
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "fact_inventory_position",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "f"
+                              }
+                            },
+                            "Property": "stock_status"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'Healthy'"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

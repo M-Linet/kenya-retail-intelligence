@@ -1,0 +1,6 @@
+stock_status,branch_product_lines,stock_value_kes,share_of_stock_value_pct
+Healthy,1446,6769103.0,77.6
+At/below reorder level,822,1137518.0,13.04
+Slow-moving (>26 wks cover),49,369063.0,4.23
+Overstocked (12-26 wks),84,319129.0,3.66
+No sales in 12 weeks,35,127971.0,1.47

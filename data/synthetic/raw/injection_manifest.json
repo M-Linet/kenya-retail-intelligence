@@ -1,0 +1,50 @@
+{
+  "products_inconsistent_category": 18,
+  "products_trailing_whitespace": 12,
+  "products_missing_brand": 6,
+  "products_missing_unit_cost": 3,
+  "customers_missing_county": 360,
+  "customers_segment_case": 150,
+  "customers_placeholder_date": 7,
+  "customers_exact_duplicates": 90,
+  "transactions_payment_label_variants": 14499,
+  "transactions_missing_payment": 5799,
+  "transactions_orphan_branch": 40,
+  "transactions_invalid_future_year": 21,
+  "transactions_exact_duplicates": 1159,
+  "items_quantity_typo_x100": 60,
+  "items_zero_price": 35,
+  "items_return_lines": 2996,
+  "items_exact_duplicates": 3604,
+  "inventory_negative_stock": 50,
+  "inventory_exact_duplicates": 498,
+  "promotions_swapped_dates": 2,
+  "orphan_transaction_ids_sample": [
+    "T0006866",
+    "T0021478",
+    "T0028354",
+    "T0034206",
+    "T0037235"
+  ],
+  "seed": 2027,
+  "period": [
+    "2024-11-01",
+    "2026-10-31"
+  ],
+  "clean_row_counts": {
+    "branches": 12,
+    "products": 203,
+    "customers": 9000,
+    "transactions": 289998,
+    "transaction_items": 1198479,
+    "inventory": 249487,
+    "promotions": 110
+  },
+  "simulation": {
+    "demand_units": 2335106.0,
+    "lost_units_due_to_stockout": 114762.0,
+    "over_ordered_product_count": 22,
+    "stale_reorder_branch_product_pairs": 155
+  },
+  "note": "Synthetic data for a fictional chain. Counts above describe injected issues for cleaning validation."
+}

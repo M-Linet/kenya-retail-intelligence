@@ -1,0 +1,89 @@
+table dim_date
+	lineageTag: b87aac8d-32c4-5ab5-9152-0511bd92b244
+	dataCategory: Time
+
+	column date
+		dataType: dateTime
+		isKey
+		formatString: dd mmm yyyy
+		lineageTag: 48d68e59-352d-5036-b0cd-dbe2ca1e29ed
+		summarizeBy: none
+		sourceColumn: date
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 39fe4110-3fe7-58f4-994e-128ee3a20416
+		summarizeBy: none
+		sourceColumn: year
+
+	column month_number
+		dataType: int64
+		formatString: 0
+		lineageTag: b22a0933-f1fe-581d-bb44-530d496932df
+		summarizeBy: none
+		sourceColumn: month_number
+
+	column month_short
+		dataType: string
+		lineageTag: 1d025502-b48e-5127-9775-8f72cb4e440f
+		summarizeBy: none
+		sourceColumn: month_short
+		sortByColumn: month_number
+
+	column year_month
+		dataType: string
+		lineageTag: 53568769-3e1c-5ad3-8333-f35bfed06f58
+		summarizeBy: none
+		sourceColumn: year_month
+
+	column month_start
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 99114a0c-7357-5d7f-b805-57d8cfdf6a21
+		summarizeBy: none
+		sourceColumn: month_start
+
+	column week_start
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 785751b5-41a6-58f7-91d0-f926a0f9994a
+		summarizeBy: none
+		sourceColumn: week_start
+
+	column iso_dow
+		dataType: int64
+		formatString: 0
+		lineageTag: 864aa797-f47d-5087-a18c-9c1dcb722243
+		summarizeBy: none
+		sourceColumn: iso_dow
+
+	column day_short
+		dataType: string
+		lineageTag: 2a3feb82-0673-5f69-a7d2-721c00142149
+		summarizeBy: none
+		sourceColumn: day_short
+		sortByColumn: iso_dow
+
+	column is_weekend
+		dataType: boolean
+		lineageTag: f2557c67-4328-5fd5-a1d5-ad0d5390c847
+		summarizeBy: none
+		sourceColumn: is_weekend
+
+	column is_payday_window
+		dataType: boolean
+		lineageTag: ba4aa090-6844-5335-b99a-c387389cefb7
+		summarizeBy: none
+		sourceColumn: is_payday_window
+
+	partition dim_date = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "dim_date.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"date", type date}, {"year", Int64.Type}, {"month_number", Int64.Type}, {"month_short", type text}, {"year_month", type text}, {"month_start", type date}, {"week_start", type date}, {"iso_dow", Int64.Type}, {"day_short", type text}, {"is_weekend", type logical}, {"is_payday_window", type logical}}, "en-US")
+				in
+				    Typed
+

@@ -1,0 +1,104 @@
+// =====================================================================================
+// Savanna Fresh Retail Intelligence: DAX measures
+// Create a blank table called _Measures (Enter Data > one empty column > delete it) and add these.
+// Display folders are given in brackets. Every measure's business definition is in powerbi/README.md.
+// Expected values with no filters are in powerbi/kpi_reconciliation.csv. Check them before styling anything.
+// =====================================================================================
+
+// ---------- [1 Sales] -----------------------------------------------------------------
+Revenue = SUM ( fact_sales[net_revenue] )                       // net of all discounts, KES
+Gross Sales = SUM ( fact_sales[gross_sales] )                   // quantity x shelf price
+Discounts = SUM ( fact_sales[discount_amount] )
+Units Sold = SUM ( fact_sales[quantity] )
+Transactions = DISTINCTCOUNT ( fact_sales[transaction_id] )     // baskets, not lines
+ATV = DIVIDE ( [Revenue], [Transactions] )                      // average transaction value
+Median Basket Value =
+    MEDIANX ( VALUES ( fact_sales[transaction_id] ), CALCULATE ( SUM ( fact_sales[net_revenue] ) ) )
+Units per Basket = DIVIDE ( [Units Sold], [Transactions] )
+
+Revenue Share of Selection =
+    DIVIDE ( [Revenue], CALCULATE ( [Revenue], ALLSELECTED ( dim_branch ), ALLSELECTED ( dim_product ) ) )
+
+// ---------- [2 Profitability] ---------------------------------------------------------
+COGS = SUM ( fact_sales[cogs] )
+Gross Profit = SUM ( fact_sales[gross_profit] )
+Gross Margin % = DIVIDE ( [Gross Profit], [Revenue] )           // ratio of totals, never an average of line margins
+Discount Rate % = DIVIDE ( [Discounts], [Gross Sales] )
+Margin Before Discounts % = DIVIDE ( [Gross Sales] - [COGS], [Gross Sales] )
+Promo Discount % of Sales =
+    DIVIDE ( CALCULATE ( [Discounts], fact_sales[price_type] = "Promotion" ), [Gross Sales] )
+Non-Promo Discount % of Sales =
+    DIVIDE ( CALCULATE ( [Discounts], fact_sales[price_type] = "Non-promotional discount" ), [Gross Sales] )
+GP Share of Selection =
+    DIVIDE ( [Gross Profit], CALCULATE ( [Gross Profit], ALLSELECTED ( dim_product ) ) )
+Chain Gross Margin % = CALCULATE ( [Gross Margin %], REMOVEFILTERS ( dim_branch ), REMOVEFILTERS ( dim_product ) )
+Margin vs Chain (pts) = ( [Gross Margin %] - [Chain Gross Margin %] ) * 100
+
+// ---------- [3 Time intelligence] (dim_date must be marked as a date table) ----------
+Revenue PY = CALCULATE ( [Revenue], DATEADD ( dim_date[date], -1, YEAR ) )
+Revenue YoY % = IF ( NOT ISBLANK ( [Revenue PY] ), DIVIDE ( [Revenue] - [Revenue PY], [Revenue PY] ) )
+Gross Profit PY = CALCULATE ( [Gross Profit], DATEADD ( dim_date[date], -1, YEAR ) )
+Gross Profit YoY % = IF ( NOT ISBLANK ( [Gross Profit PY] ), DIVIDE ( [Gross Profit] - [Gross Profit PY], [Gross Profit PY] ) )
+Revenue PM = CALCULATE ( [Revenue], DATEADD ( dim_date[date], -1, MONTH ) )
+Revenue MoM % = IF ( NOT ISBLANK ( [Revenue PM] ), DIVIDE ( [Revenue] - [Revenue PM], [Revenue PM] ) )
+Revenue Running Total =
+    CALCULATE ( [Revenue], FILTER ( ALLSELECTED ( dim_date[date] ), dim_date[date] <= MAX ( dim_date[date] ) ) )
+Revenue 3M Avg =        // average monthly revenue over the 3 months ending in the current month (use on a month axis)
+    VAR d = MAX ( dim_date[date] )
+    RETURN DIVIDE ( CALCULATE ( [Revenue], DATESINPERIOD ( dim_date[date], d, -3, MONTH ) ), 3 )
+// Like-for-like: only branches open for the full comparison period (excludes Ruiru, BR10)
+Revenue LFL = CALCULATE ( [Revenue], dim_branch[is_like_for_like] = TRUE () )
+Revenue LFL PY = CALCULATE ( [Revenue LFL], DATEADD ( dim_date[date], -1, YEAR ) )
+Revenue LFL YoY % = IF ( NOT ISBLANK ( [Revenue LFL PY] ), DIVIDE ( [Revenue LFL] - [Revenue LFL PY], [Revenue LFL PY] ) )
+Avg Daily Revenue = DIVIDE ( [Revenue], COUNTROWS ( dim_date ) )    // per calendar day, so weekdays compare fairly
+
+// ---------- [4 Rankings] --------------------------------------------------------------
+Branch Revenue Rank = IF ( HASONEVALUE ( dim_branch[branch_name] ), RANKX ( ALLSELECTED ( dim_branch[branch_name] ), [Revenue] ) )
+Branch Margin Rank = IF ( HASONEVALUE ( dim_branch[branch_name] ), RANKX ( ALLSELECTED ( dim_branch[branch_name] ), [Gross Margin %] ) )
+Product GP Rank = IF ( HASONEVALUE ( dim_product[product_name] ), RANKX ( ALLSELECTED ( dim_product[product_name] ), [Gross Profit] ) )
+
+// ---------- [5 Inventory] (fact_inventory = Sunday closing stock, semi-additive over time) ----
+// Stock is a balance: it adds across branches and products, but NOT across weeks.
+Latest Snapshot Date = CALCULATE ( MAX ( fact_inventory[snapshot_date] ) )
+Closing Stock Units =
+    VAR d = [Latest Snapshot Date]
+    RETURN CALCULATE ( SUM ( fact_inventory[stock_quantity] ), fact_inventory[snapshot_date] = d )
+Closing Stock Value =
+    VAR d = [Latest Snapshot Date]
+    RETURN CALCULATE ( SUM ( fact_inventory[stock_value_at_cost] ), fact_inventory[snapshot_date] = d )
+Avg Stock Value =
+    AVERAGEX ( VALUES ( fact_inventory[snapshot_date] ), CALCULATE ( SUM ( fact_inventory[stock_value_at_cost] ) ) )
+Weeks in Selection = DISTINCTCOUNT ( fact_inventory[snapshot_date] )
+Inventory Turnover (annualised) =
+    DIVIDE ( [COGS], [Avg Stock Value] ) * DIVIDE ( 52, [Weeks in Selection] )
+Avg Weeks of Stock = DIVIDE ( 52, [Inventory Turnover (annualised)] )
+Stockout Weeks = CALCULATE ( COUNTROWS ( fact_inventory ), fact_inventory[is_stockout] = TRUE () )
+Stockout Rate % = DIVIDE ( [Stockout Weeks], COUNTROWS ( fact_inventory ) )
+Below Reorder Lines =
+    VAR d = [Latest Snapshot Date]
+    RETURN CALCULATE ( COUNTROWS ( fact_inventory ), fact_inventory[snapshot_date] = d, fact_inventory[at_or_below_reorder] = TRUE () )
+
+// Latest-position table (fact_inventory_position) has one row per branch-product at the last count
+Slow-Moving Stock Value =
+    CALCULATE ( SUM ( fact_inventory_position[stock_value_at_cost] ),
+                fact_inventory_position[stock_status] IN { "Slow-moving (>26 wks cover)", "No sales in 12 weeks" } )
+Slow-Moving Share % = DIVIDE ( [Slow-Moving Stock Value], SUM ( fact_inventory_position[stock_value_at_cost] ) )
+Chain Weeks of Cover =
+    DIVIDE ( SUM ( fact_inventory_position[stock_quantity] ), SUM ( fact_inventory_position[avg_weekly_units_12w] ) )
+
+// ---------- [6 Promotions] ------------------------------------------------------------
+Promo Revenue = CALCULATE ( [Revenue], fact_sales[price_type] = "Promotion" )
+Promo Share of Revenue % = DIVIDE ( [Promo Revenue], [Revenue] )
+// Incremental GP needs a pre-period baseline per promotion. That logic lives in SQL (sql/06_promotions.sql,
+// query q18), and its output is imported as table promo_performance. These measures summarise it.
+Promo Incremental GP = SUM ( promo_performance[incremental_gp_kes] )
+Promo Discount Cost = SUM ( promo_performance[discount_cost_kes] )
+Incremental GP per KES Discount = DIVIDE ( [Promo Incremental GP], [Promo Discount Cost] )
+GP-Positive Promotions % =
+    DIVIDE ( CALCULATE ( COUNTROWS ( promo_performance ), promo_performance[outcome] = "GP-positive" ),
+             COUNTROWS ( promo_performance ) )
+
+// ---------- [7 Formatting helpers] ----------------------------------------------------
+Revenue Label (KES M) = FORMAT ( [Revenue] / 1e6, "#,0.0" ) & "M"
+YoY Colour = IF ( [Revenue YoY %] < 0, "#eb6834", "#2a78d6" )      // conditional formatting: field value
+Stockout Colour = IF ( [Stockout Rate %] > 0.10, "#eb6834", "#2a78d6" )

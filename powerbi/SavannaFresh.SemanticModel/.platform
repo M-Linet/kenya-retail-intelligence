@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "SavannaFresh"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "86d2b7e7-09e5-43a0-bdb2-ba68bca82a2a"
+  }
+}

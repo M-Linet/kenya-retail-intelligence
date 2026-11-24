@@ -1,0 +1,124 @@
+table fact_sales
+	lineageTag: 4ba23481-59bc-56f6-9bbd-e93c876a729a
+
+	column transaction_item_id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8d095ba9-d942-5db8-b088-a60444e59a2f
+		summarizeBy: none
+		sourceColumn: transaction_item_id
+
+	column transaction_id
+		dataType: string
+		lineageTag: 83223d77-e464-5ad1-a9a6-a8e1ab51e252
+		summarizeBy: none
+		sourceColumn: transaction_id
+
+	column sale_date
+		dataType: dateTime
+		isHidden
+		formatString: dd mmm yyyy
+		lineageTag: b50a29ac-5f7e-585b-b656-64eb8d232f00
+		summarizeBy: none
+		sourceColumn: sale_date
+
+	column sale_hour
+		dataType: int64
+		formatString: 0
+		lineageTag: 0070de45-2cec-5964-b54e-f031a5755ff4
+		summarizeBy: none
+		sourceColumn: sale_hour
+
+	column branch_id
+		dataType: string
+		isHidden
+		lineageTag: 061e67a2-39a8-57df-b474-d68eba2d0469
+		summarizeBy: none
+		sourceColumn: branch_id
+
+	column product_id
+		dataType: string
+		isHidden
+		lineageTag: 6f3fe03e-0f29-5b2d-b196-84f32c9974c9
+		summarizeBy: none
+		sourceColumn: product_id
+
+	column customer_key
+		dataType: string
+		isHidden
+		lineageTag: f08ae1e8-7af7-541f-a93e-25703f972930
+		summarizeBy: none
+		sourceColumn: customer_key
+
+	column payment_method
+		dataType: string
+		lineageTag: ef72858a-ff1f-5399-9ee3-d292391fccea
+		summarizeBy: none
+		sourceColumn: payment_method
+
+	column promotion_id
+		dataType: string
+		isHidden
+		lineageTag: d5333b7e-8e25-5b41-abde-e6e2488c176b
+		summarizeBy: none
+		sourceColumn: promotion_id
+
+	column price_type
+		dataType: string
+		lineageTag: 593a466d-f593-5a39-99ea-2584a2dba20e
+		summarizeBy: none
+		sourceColumn: price_type
+
+	column quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: de4b7f78-9046-5226-b981-8f3e7664c6d6
+		summarizeBy: sum
+		sourceColumn: quantity
+
+	column gross_sales
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: aa5d020e-0de7-5c01-8083-1a0b86947828
+		summarizeBy: sum
+		sourceColumn: gross_sales
+
+	column discount_amount
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: 59c87f5a-9c2c-590f-81c1-412ba9ec2e55
+		summarizeBy: sum
+		sourceColumn: discount_amount
+
+	column net_revenue
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: 619bdac0-f652-56b2-948f-c0c2eb2a897c
+		summarizeBy: sum
+		sourceColumn: net_revenue
+
+	column cogs
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: 0628613c-1a15-5663-a0ae-a8e5530f8a38
+		summarizeBy: sum
+		sourceColumn: cogs
+
+	column gross_profit
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: d9c98b5a-8349-5d77-9390-4f1cb8e5acf9
+		summarizeBy: sum
+		sourceColumn: gross_profit
+
+	partition fact_sales = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "fact_sales.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"transaction_item_id", Int64.Type}, {"transaction_id", type text}, {"sale_date", type date}, {"sale_hour", Int64.Type}, {"branch_id", type text}, {"product_id", type text}, {"customer_key", type text}, {"payment_method", type text}, {"promotion_id", type text}, {"price_type", type text}, {"quantity", Int64.Type}, {"gross_sales", Currency.Type}, {"discount_amount", Currency.Type}, {"net_revenue", Currency.Type}, {"cogs", Currency.Type}, {"gross_profit", Currency.Type}}, "en-US")
+				in
+				    Typed
+

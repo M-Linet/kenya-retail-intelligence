@@ -1,0 +1,2 @@
+gross_sales_kes,discounts_kes,net_revenue_kes,cogs_kes,gross_profit_kes,gross_margin_pct,discount_rate_pct,units_sold,transactions,avg_transaction_value_kes,units_per_basket,loyalty_identified_pct
+494333019.0,4694604.0,489638415.0,398445692.0,91192723.0,18.62,0.95,2219840,289936,1688.78,7.66,61.9

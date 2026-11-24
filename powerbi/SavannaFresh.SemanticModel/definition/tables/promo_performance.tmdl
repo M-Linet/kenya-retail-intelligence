@@ -1,0 +1,96 @@
+table promo_performance
+	lineageTag: 4ecc33c5-d45a-5fa8-9704-abd7e24930f2
+
+	column promotion_id
+		dataType: string
+		lineageTag: 1af12b96-e524-550d-8ccb-817f4c0708a8
+		summarizeBy: none
+		sourceColumn: promotion_id
+
+	column product_id
+		dataType: string
+		isHidden
+		lineageTag: 1a50a811-782d-56c2-a126-7775f36dab63
+		summarizeBy: none
+		sourceColumn: product_id
+
+	column product_name
+		dataType: string
+		lineageTag: 00a7880d-9adb-580d-8404-b5df5591d86e
+		summarizeBy: none
+		sourceColumn: product_name
+
+	column category
+		dataType: string
+		lineageTag: 5d56466a-ef91-521c-a346-92dd1ccf5678
+		summarizeBy: none
+		sourceColumn: category
+
+	column start_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 4b434286-c50e-544b-8846-4d5b87613f41
+		summarizeBy: none
+		sourceColumn: start_date
+
+	column days
+		dataType: int64
+		formatString: 0
+		lineageTag: 8e66fa94-53be-5ae3-977a-6affc9c4de63
+		summarizeBy: none
+		sourceColumn: days
+
+	column discount_percentage
+		dataType: double
+		lineageTag: 5069b554-001c-5f19-9b38-3677f382c6d0
+		summarizeBy: sum
+		sourceColumn: discount_percentage
+
+	column baseline_units_per_day
+		dataType: double
+		lineageTag: c907fec2-94f8-562e-881f-a561b9ce8686
+		summarizeBy: sum
+		sourceColumn: baseline_units_per_day
+
+	column promo_units_per_day
+		dataType: double
+		lineageTag: 5d7b8a23-a8f4-5202-a4ec-827abf9ad11d
+		summarizeBy: sum
+		sourceColumn: promo_units_per_day
+
+	column unit_uplift_pct
+		dataType: double
+		lineageTag: 5f20572c-c16c-510d-a0c1-7b905e7106c6
+		summarizeBy: sum
+		sourceColumn: unit_uplift_pct
+
+	column discount_cost_kes
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: 9bc04424-b856-5e3a-a3fb-b1032e7e8703
+		summarizeBy: sum
+		sourceColumn: discount_cost_kes
+
+	column incremental_gp_kes
+		dataType: decimal
+		formatString: #,0.00
+		lineageTag: f88f9dc3-3371-5cf0-9b14-f8ba09c478e5
+		summarizeBy: sum
+		sourceColumn: incremental_gp_kes
+
+	column outcome
+		dataType: string
+		lineageTag: b5c634a1-bce5-51b3-bee6-2249c521ac73
+		summarizeBy: none
+		sourceColumn: outcome
+
+	partition promo_performance = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "promo_performance.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"promotion_id", type text}, {"product_id", type text}, {"product_name", type text}, {"category", type text}, {"start_date", type date}, {"days", Int64.Type}, {"discount_percentage", type number}, {"baseline_units_per_day", type number}, {"promo_units_per_day", type number}, {"unit_uplift_pct", type number}, {"discount_cost_kes", Currency.Type}, {"incremental_gp_kes", Currency.Type}, {"outcome", type text}}, "en-US")
+				in
+				    Typed
+

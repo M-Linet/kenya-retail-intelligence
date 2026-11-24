@@ -1,0 +1,13 @@
+revenue_rank,branch_id,branch_name,county,branch_type,revenue_kes,share_of_chain_pct,gross_profit_kes,gross_margin_pct,margin_rank,transactions,atv_kes
+1,BR01,Savanna Fresh Westlands,Nairobi,Hypermarket,75867420.0,15.49,14287885.0,18.83,5,37904,2002.0
+2,BR04,Savanna Fresh Nyali,Mombasa,Hypermarket,66514567.0,13.58,11582736.0,17.41,12,34474,1929.0
+3,BR07,Savanna Fresh Nakuru,Nakuru,Hypermarket,64902358.0,13.26,12015362.0,18.51,11,30729,2112.0
+4,BR02,Savanna Fresh Embakasi,Nairobi,Supermarket,48159624.0,9.84,9014434.0,18.72,7,27120,1776.0
+5,BR05,Savanna Fresh Mombasa CBD,Mombasa,Supermarket,42928890.0,8.77,8026192.0,18.7,8,23440,1831.0
+6,BR09,Savanna Fresh Thika,Kiambu,Supermarket,41177192.0,8.41,7718496.0,18.74,6,23042,1787.0
+7,BR06,Savanna Fresh Kisumu,Kisumu,Supermarket,37519873.0,7.66,7191933.0,19.17,3,24215,1549.0
+8,BR11,Savanna Fresh Eldoret,Uasin Gishu,Supermarket,36156495.0,7.38,6900914.0,19.09,4,23213,1558.0
+9,BR03,Savanna Fresh Kasarani,Nairobi,Express,23990091.0,4.9,4453752.0,18.56,9,18739,1280.0
+10,BR08,Savanna Fresh Naivasha,Nakuru,Express,17718880.0,3.62,3429671.0,19.36,1,16377,1082.0
+11,BR12,Savanna Fresh Machakos,Machakos,Express,17386934.0,3.55,3364178.0,19.35,2,17351,1002.0
+12,BR10,Savanna Fresh Ruiru,Kiambu,Express,17316090.0,3.54,3207169.0,18.52,10,13332,1299.0

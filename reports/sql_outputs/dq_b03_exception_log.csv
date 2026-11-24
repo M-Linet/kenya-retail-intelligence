@@ -1,0 +1,22 @@
+source_table,issue,action_taken,records
+customers,missing county,left NULL (reported as Unknown),360
+customers,segment label casing,standardised,150
+customers,exact duplicate row,removed duplicate copy,90
+customers,placeholder registration date 1900-01-01,set to NULL,7
+inventory,exact duplicate row,removed duplicate copy,498
+inventory,negative stock count (sold before receipt posted),set to 0,50
+products,non-standard category label,mapped to canonical category,18
+products,leading/trailing whitespace in name,trimmed,12
+products,missing brand,set to 'Unknown',6
+products,missing unit_cost,imputed from category median cost ratio,3
+promotions,end_date before start_date,swapped dates,2
+transaction_items,exact duplicate row,removed duplicate copy,3604
+transaction_items,negative quantity,moved to retail.returns,2996
+transaction_items,parent transaction quarantined or missing,quarantined,238
+transaction_items,quantity >= 100 on non-business basket,quarantined,60
+transaction_items,zero unit_price,imputed modal product price,35
+transactions,non-standard payment label,standardised,13819
+transactions,missing payment method,set to 'Unknown',5797
+transactions,exact duplicate row,removed duplicate copy,1159
+transactions,branch_id not in branch master,quarantined,40
+transactions,timestamp outside data period (likely year typo),quarantined,21

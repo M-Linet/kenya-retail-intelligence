@@ -1,0 +1,38 @@
+table dim_customer
+	lineageTag: cafe3959-b20d-5341-b420-e96247d68ca3
+
+	column customer_key
+		dataType: string
+		lineageTag: a6ce4444-fc1f-535c-a52a-6e36a6bbe0c8
+		summarizeBy: none
+		sourceColumn: customer_key
+
+	column customer_segment
+		dataType: string
+		lineageTag: f2e1ab80-9882-599a-8664-d138a3384a14
+		summarizeBy: none
+		sourceColumn: customer_segment
+
+	column registration_date
+		dataType: dateTime
+		formatString: dd mmm yyyy
+		lineageTag: 011abbcc-46a8-5257-ba8b-b74b0e025244
+		summarizeBy: none
+		sourceColumn: registration_date
+
+	column county
+		dataType: string
+		lineageTag: b563f5a4-cdc6-5dbf-9fad-3dbfa71a11a0
+		summarizeBy: none
+		sourceColumn: county
+
+	partition dim_customer = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "dim_customer.csv"), [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"customer_key", type text}, {"customer_segment", type text}, {"registration_date", type date}, {"county", type text}}, "en-US")
+				in
+				    Typed
+

@@ -1,0 +1,13 @@
+branch_id,branch_name,stockout_weeks,est_lost_revenue_kes,est_lost_gross_profit_kes
+BR06,Savanna Fresh Kisumu,4992.0,8404477.0,1568478.0
+BR11,Savanna Fresh Eldoret,4036.0,7102492.0,1300099.0
+BR07,Savanna Fresh Nakuru,1321.0,4181979.0,672759.0
+BR04,Savanna Fresh Nyali,1263.0,3647730.0,446832.0
+BR01,Savanna Fresh Westlands,1049.0,2120803.0,435344.0
+BR02,Savanna Fresh Embakasi,1253.0,2534129.0,419499.0
+BR09,Savanna Fresh Thika,1150.0,1495313.0,254789.0
+BR05,Savanna Fresh Mombasa CBD,1178.0,1382904.0,251089.0
+BR08,Savanna Fresh Naivasha,2194.0,1135190.0,211569.0
+BR03,Savanna Fresh Kasarani,1489.0,1126862.0,197758.0
+BR12,Savanna Fresh Machakos,1444.0,690292.0,124886.0
+BR10,Savanna Fresh Ruiru,583.0,525060.0,95849.0

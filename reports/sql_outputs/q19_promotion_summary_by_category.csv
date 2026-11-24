@@ -1,0 +1,9 @@
+category,promotions,avg_discount_pct,unit_uplift_pct,discount_cost_kes,incremental_gp_kes,incremental_gp_per_kes_discount,gp_positive_promotions
+Snacks & Confectionery,15,14.0,123.7,31996.0,4865.0,0.15,11
+Personal Care,8,15.0,80.7,70754.0,1801.0,0.03,4
+Household & Cleaning,13,14.6,74.3,112742.0,-15999.0,-0.14,4
+Bakery,4,17.5,93.8,39971.0,-9770.0,-0.24,1
+Baby Care,3,15.0,105.8,16386.0,-4934.0,-0.3,0
+Beverages,22,15.9,104.4,314927.0,-106669.0,-0.34,4
+Staples,25,14.0,76.0,344640.0,-199276.0,-0.58,0
+Dairy,13,14.2,75.1,262185.0,-154070.0,-0.59,5

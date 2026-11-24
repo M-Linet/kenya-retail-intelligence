@@ -1,0 +1,6 @@
+field,missing,total
+products.brand,6,203
+products.unit_cost,3,203
+customers.county,362,9090
+transactions.payment_method,5823,291157
+transactions.customer_id (anonymous),111073,291157

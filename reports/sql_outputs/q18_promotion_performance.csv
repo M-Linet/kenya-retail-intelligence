@@ -1,0 +1,104 @@
+promotion_id,product_id,product_name,category,start_date,days,discount_percentage,baseline_units_per_day,promo_units_per_day,unit_uplift_pct,discount_cost_kes,incremental_gp_kes,outcome
+PR046,P0076,Tamu Dairy Eggs Tray 30,Dairy,2026-03-29,14,25.0,27.07,61.93,128.8,102089.0,-66452.0,GP-negative
+PR110,P0077,Rift Creamery Eggs Tray 30,Dairy,2026-09-27,14,25.0,20.79,41.07,97.6,74606.0,-55127.0,GP-negative
+PR054,P0009,Mlima Gold Rice 2kg,Staples,2025-02-26,14,15.0,26.29,60.14,128.8,44837.0,-31035.0,GP-negative
+PR059,P0102,Pwani Springs Fruit Juice 1L,Beverages,2025-05-05,7,25.0,41.0,117.14,185.7,47355.0,-20006.0,GP-negative
+PR019,P0001,Mlima Gold Maize Flour 2kg,Staples,2025-10-28,14,10.0,56.89,100.5,76.6,25185.0,-16939.0,GP-negative
+PR034,P0015,Savanna Value Sugar 2kg,Staples,2026-08-13,14,15.0,24.57,45.43,84.9,28048.0,-16687.0,GP-negative
+PR085,P0017,Mlima Gold Cooking Oil 1L,Staples,2026-09-13,14,15.0,23.18,30.64,32.2,21429.0,-16025.0,GP-negative
+PR069,P0110,Pwani Springs Tea Leaves 250g,Beverages,2025-11-19,7,25.0,47.25,97.14,105.6,26010.0,-14994.0,GP-negative
+PR094,P0074,Rift Creamery Cheese 200g,Dairy,2025-04-05,14,15.0,23.11,38.5,66.6,39212.0,-14711.0,GP-negative
+PR001,P0103,Tropika Fruit Juice 1L,Beverages,2026-09-23,7,20.0,40.79,98.29,141.0,33024.0,-14604.0,GP-negative
+PR028,P0011,Savanna Value Rice 2kg,Staples,2025-03-11,7,25.0,20.71,32.57,57.2,18069.0,-14214.0,GP-negative
+PR104,P0013,Mlima Gold Sugar 2kg,Staples,2024-12-03,14,10.0,45.04,97.71,117.0,46238.0,-14006.0,GP-negative
+PR092,P0102,Pwani Springs Fruit Juice 1L,Beverages,2026-01-09,7,15.0,72.79,115.43,58.6,27997.0,-12237.0,GP-negative
+PR057,P0102,Pwani Springs Fruit Juice 1L,Beverages,2025-03-31,14,15.0,49.46,103.36,109.0,50139.0,-11009.0,GP-negative
+PR018,P0016,Royal Harvest Sugar 2kg,Staples,2025-05-24,7,20.0,10.18,30.86,203.2,16891.0,-10487.0,GP-negative
+PR096,P0002,Shamba Pride Maize Flour 2kg,Staples,2025-10-22,7,15.0,51.75,89.14,72.3,16006.0,-10458.0,GP-negative
+PR035,P0011,Savanna Value Rice 2kg,Staples,2026-01-16,14,10.0,27.71,38.14,37.6,16928.0,-10383.0,GP-negative
+PR062,P0067,Tamu Dairy Yoghurt 500ml,Dairy,2025-08-03,7,20.0,33.96,60.14,77.1,13135.0,-10003.0,GP-negative
+PR071,P0103,Tropika Fruit Juice 1L,Beverages,2025-05-05,7,15.0,41.11,64.71,57.4,16308.0,-8525.0,GP-negative
+PR003,P0148,Savanna Value Toilet Paper 10pk,Household & Cleaning,2025-12-25,14,20.0,10.14,15.93,57.0,17171.0,-8257.0,GP-negative
+PR027,P0113,Kilele Premium Tea Leaves 250g,Beverages,2026-07-15,14,25.0,11.89,25.79,116.8,17509.0,-8136.0,GP-negative
+PR109,P0004,Royal Harvest Maize Flour 2kg,Staples,2025-07-19,7,20.0,21.29,35.71,67.8,10450.0,-8100.0,GP-negative
+PR072,P0013,Mlima Gold Sugar 2kg,Staples,2025-02-22,7,10.0,45.86,87.57,91.0,20719.0,-7977.0,GP-negative
+PR051,P0110,Pwani Springs Tea Leaves 250g,Beverages,2026-01-17,7,15.0,50.32,66.71,32.6,10718.0,-6928.0,GP-negative
+PR007,P0035,Savanna Value Spaghetti 400g,Staples,2025-12-09,14,25.0,14.04,33.14,136.1,11020.0,-6802.0,GP-negative
+PR099,P0015,Savanna Value Sugar 2kg,Staples,2025-03-20,14,10.0,23.11,44.79,93.8,18434.0,-6706.0,GP-negative
+PR081,P0088,Savanna Bakery Mandazi 6pc,Bakery,2026-07-19,7,25.0,50.82,100.14,97.0,15597.0,-6603.0,GP-negative
+PR049,P0131,Nyota Clean Bar Soap 800g,Household & Cleaning,2026-08-25,14,10.0,41.68,61.14,46.7,16093.0,-6293.0,GP-negative
+PR044,P0094,Pwani Springs Soda 500ml,Beverages,2025-06-05,14,25.0,18.89,57.36,203.6,14253.0,-5295.0,GP-negative
+PR017,P0064,Tamu Dairy Long-life Milk 500ml,Dairy,2026-01-06,7,25.0,40.64,53.0,30.4,6493.0,-5156.0,GP-negative
+PR047,P0020,Royal Harvest Cooking Oil 1L,Staples,2026-07-04,14,15.0,7.18,11.36,58.2,9182.0,-5113.0,GP-negative
+PR031,P0157,Afya Care Body Lotion 400ml,Personal Care,2026-06-11,14,15.0,21.0,35.0,66.7,28298.0,-4578.0,GP-negative
+PR068,P0024,Royal Harvest Cooking Oil 3L,Staples,2026-07-22,7,10.0,7.96,18.29,129.6,13312.0,-4543.0,GP-negative
+PR073,P0077,Rift Creamery Eggs Tray 30,Dairy,2025-02-05,7,10.0,14.21,21.71,52.8,7889.0,-4074.0,GP-negative
+PR107,P0140,Savanna Value Bleach 750ml,Household & Cleaning,2026-01-15,7,25.0,13.71,22.86,66.7,6240.0,-3802.0,GP-negative
+PR061,P0085,Savanna Bakery Chapati 5pc,Bakery,2026-08-01,14,20.0,25.11,51.14,103.7,14463.0,-3587.0,GP-negative
+PR056,P0064,Tamu Dairy Long-life Milk 500ml,Dairy,2026-10-03,7,20.0,33.79,56.57,67.4,5544.0,-3521.0,GP-negative
+PR103,P0016,Royal Harvest Sugar 2kg,Staples,2025-05-09,7,10.0,14.25,20.86,46.4,5709.0,-3449.0,GP-negative
+PR011,P0025,Mlima Gold Salt 1kg,Staples,2025-10-14,14,15.0,28.5,50.21,76.2,4113.0,-3392.0,GP-negative
+PR021,P0115,Tropika Instant Coffee 100g,Beverages,2025-07-15,7,15.0,12.11,29.0,139.5,12880.0,-2946.0,GP-negative
+PR032,P0194,Savanna Value Diapers 40pk,Baby Care,2025-11-13,7,15.0,4.43,7.14,61.3,8055.0,-2940.0,GP-negative
+PR037,P0027,Savanna Value Salt 1kg,Staples,2026-01-16,14,20.0,23.32,38.21,63.9,3638.0,-2735.0,GP-negative
+PR076,P0144,Savanna Value Dishwashing Liquid 500ml,Household & Cleaning,2025-07-15,7,25.0,16.46,34.0,106.5,7616.0,-2656.0,GP-negative
+PR025,P0030,Shamba Pride Beans 1kg,Staples,2025-09-01,7,15.0,12.07,17.43,44.4,3459.0,-2615.0,GP-negative
+PR040,P0105,Kilele Premium Fruit Juice 1L,Beverages,2025-08-06,7,20.0,12.07,35.0,189.9,14357.0,-2404.0,GP-negative
+PR105,P0025,Mlima Gold Salt 1kg,Staples,2025-06-03,7,15.0,31.43,53.29,69.5,2182.0,-1816.0,GP-negative
+PR013,P0020,Royal Harvest Cooking Oil 1L,Staples,2026-01-17,7,10.0,8.18,10.29,25.8,2772.0,-1767.0,GP-negative
+PR108,P0033,Mlima Gold Spaghetti 400g,Staples,2026-07-17,7,10.0,20.61,23.43,13.7,1820.0,-1649.0,GP-negative
+PR106,P0166,Afya Care Roll-on Deodorant,Personal Care,2025-09-22,14,15.0,8.21,13.43,63.5,9842.0,-1639.0,GP-negative
+PR014,P0143,Nyota Clean Dishwashing Liquid 500ml,Household & Cleaning,2026-06-12,7,25.0,4.11,9.71,136.5,2482.0,-1255.0,GP-negative
+PR016,P0114,Pwani Springs Instant Coffee 100g,Beverages,2025-06-07,14,10.0,16.75,25.5,52.2,14351.0,-1238.0,GP-negative
+PR097,P0199,Little Star Baby Cereal 400g,Baby Care,2025-12-13,7,15.0,2.29,5.57,143.8,2954.0,-1048.0,GP-negative
+PR093,P0027,Savanna Value Salt 1kg,Staples,2026-08-03,14,10.0,22.75,28.21,24.0,1343.0,-978.0,GP-negative
+PR102,P0131,Nyota Clean Bar Soap 800g,Household & Cleaning,2026-07-12,7,10.0,36.75,70.29,91.3,9250.0,-958.0,GP-negative
+PR067,P0202,Little Star Baby Lotion 200ml,Baby Care,2025-06-07,14,15.0,2.75,6.21,126.0,5377.0,-946.0,GP-negative
+PR024,P0112,Savanna Value Tea Leaves 250g,Beverages,2025-09-23,7,15.0,16.43,31.71,93.0,4496.0,-854.0,GP-negative
+PR078,P0184,Crunchy Bites Assorted Sweets 250g,Snacks & Confectionery,2025-08-15,7,20.0,10.82,24.57,127.1,3543.0,-821.0,GP-negative
+PR002,P0035,Savanna Value Spaghetti 400g,Staples,2024-12-31,7,10.0,16.18,21.86,35.1,1454.0,-741.0,GP-negative
+PR101,P0027,Savanna Value Salt 1kg,Staples,2025-03-31,14,10.0,17.93,29.5,64.5,1404.0,-659.0,GP-negative
+PR074,P0086,Golden Crust Chapati 5pc,Bakery,2026-09-01,7,15.0,21.86,41.71,90.8,4818.0,-611.0,GP-negative
+PR004,P0066,Savanna Value Long-life Milk 500ml,Dairy,2026-02-03,7,15.0,12.71,21.29,67.4,1408.0,-503.0,GP-negative
+PR012,P0147,Nyota Clean Toilet Paper 10pk,Household & Cleaning,2026-08-24,14,10.0,0.79,0.79,0.0,477.0,-477.0,GP-negative
+PR079,P0176,Crunchy Bites Biscuits 200g,Snacks & Confectionery,2025-10-04,14,15.0,25.18,53.29,111.6,9064.0,-468.0,GP-negative
+PR058,P0133,Crystal Pro Bar Soap 800g,Household & Cleaning,2026-05-16,7,10.0,13.61,19.29,41.7,3456.0,-461.0,GP-negative
+PR050,P0159,Savanna Value Body Lotion 400ml,Personal Care,2025-09-24,7,20.0,7.39,16.57,124.2,7447.0,-386.0,GP-negative
+PR005,P0095,Tropika Soda 500ml,Beverages,2026-01-24,7,10.0,20.29,31.0,52.8,1584.0,-234.0,GP-negative
+PR086,P0094,Pwani Springs Soda 500ml,Beverages,2025-05-07,7,10.0,23.04,37.29,61.9,1853.0,-170.0,GP-negative
+PR098,P0153,Crystal Pro Matches 10pk,Household & Cleaning,2025-03-24,14,15.0,2.39,4.5,88.1,747.0,-167.0,GP-negative
+PR020,P0178,Savanna Value Biscuits 200g,Snacks & Confectionery,2026-09-30,14,25.0,0.68,1.29,89.5,315.0,-166.0,GP-negative
+PR060,P0107,Tropika Bottled Water 1L,Beverages,2025-08-20,7,10.0,16.11,23.86,48.1,1019.0,-153.0,GP-negative
+PR066,P0165,Savanna Value Sanitary Pads 10pk,Personal Care,2024-12-23,7,25.0,1.64,3.43,108.7,618.0,-119.0,GP-negative
+PR083,P0094,Pwani Springs Soda 500ml,Beverages,2025-10-07,7,15.0,21.46,57.29,166.9,4271.0,-110.0,GP-negative
+PR077,P0098,Pwani Springs Soda 2L,Beverages,2025-02-02,7,10.0,10.29,17.14,66.7,2460.0,-30.0,GP-negative
+PR065,P0181,Tamu Treats Chocolate Bar 80g,Snacks & Confectionery,2024-12-10,7,10.0,0.61,0.86,41.2,81.0,-12.0,GP-negative
+PR080,P0156,Savanna Value Toothpaste 100ml,Personal Care,2025-10-29,7,10.0,3.82,5.43,42.1,460.0,21.0,GP-positive
+PR023,P0108,Savanna Value Bottled Water 1L,Beverages,2025-02-08,7,20.0,5.79,17.29,198.8,1258.0,31.0,GP-positive
+PR082,P0189,Tamu Treats Roasted Peanuts 200g,Snacks & Confectionery,2026-07-03,7,20.0,5.64,14.71,160.8,2348.0,65.0,GP-positive
+PR041,P0096,Savanna Value Soda 500ml,Beverages,2025-11-20,14,10.0,1.0,2.29,128.6,192.0,85.0,GP-positive
+PR063,P0179,Velvet Cocoa Biscuits 200g,Snacks & Confectionery,2026-03-02,7,10.0,5.89,10.57,79.4,821.0,96.0,GP-positive
+PR064,P0189,Tamu Treats Roasted Peanuts 200g,Snacks & Confectionery,2025-02-27,7,20.0,5.0,13.57,171.4,2166.0,111.0,GP-positive
+PR042,P0182,Savanna Value Chocolate Bar 80g,Snacks & Confectionery,2025-03-24,7,20.0,2.86,8.14,185.0,1334.0,147.0,GP-positive
+PR015,P0066,Savanna Value Long-life Milk 500ml,Dairy,2025-06-26,7,10.0,11.82,26.57,124.8,1172.0,173.0,GP-positive
+PR022,P0184,Crunchy Bites Assorted Sweets 250g,Snacks & Confectionery,2025-04-30,7,5.0,10.5,14.14,34.7,510.0,225.0,GP-positive
+PR038,P0178,Savanna Value Biscuits 200g,Snacks & Confectionery,2025-12-04,7,15.0,10.79,32.14,198.0,2363.0,274.0,GP-positive
+PR087,P0142,Safi Home Dishwashing Liquid 500ml,Household & Cleaning,2025-11-19,7,10.0,39.5,64.14,62.4,6690.0,283.0,GP-positive
+PR048,P0177,Tamu Treats Biscuits 200g,Snacks & Confectionery,2025-11-01,7,15.0,18.86,45.0,138.6,4064.0,304.0,GP-positive
+PR039,P0186,Savanna Value Assorted Sweets 250g,Snacks & Confectionery,2026-02-28,7,10.0,4.39,11.0,150.4,685.0,568.0,GP-positive
+PR100,P0065,Rift Creamery Long-life Milk 500ml,Dairy,2026-02-17,14,5.0,23.5,35.5,51.1,1889.0,751.0,GP-positive
+PR070,P0183,Velvet Cocoa Chocolate Bar 80g,Snacks & Confectionery,2025-07-20,14,10.0,1.36,3.71,173.7,931.0,869.0,GP-positive
+PR075,P0086,Golden Crust Chapati 5pc,Bakery,2026-01-28,14,10.0,18.61,33.07,77.7,5093.0,1031.0,GP-positive
+PR030,P0077,Rift Creamery Eggs Tray 30,Dairy,2024-12-09,7,5.0,18.14,30.71,69.3,5579.0,1038.0,GP-positive
+PR091,P0061,Tamu Dairy Fresh Milk 500ml,Dairy,2025-04-14,14,5.0,21.04,34.07,62.0,1526.0,1052.0,GP-positive
+PR043,P0130,Safi Home Bar Soap 800g,Household & Cleaning,2025-10-17,14,10.0,59.36,103.36,74.1,29519.0,1184.0,GP-positive
+PR055,P0117,Kilele Premium Instant Coffee 100g,Beverages,2025-08-13,14,15.0,2.18,6.43,195.1,7061.0,1311.0,GP-positive
+PR089,P0095,Tropika Soda 500ml,Beverages,2025-12-13,14,10.0,25.54,57.07,123.5,5833.0,1779.0,GP-positive
+PR026,P0175,Velvet Cocoa Potato Crisps 150g,Snacks & Confectionery,2026-02-21,7,5.0,7.86,15.57,98.2,894.0,1793.0,GP-positive
+PR084,P0180,Crunchy Bites Chocolate Bar 80g,Snacks & Confectionery,2025-10-29,14,10.0,6.71,15.57,131.9,2878.0,1880.0,GP-positive
+PR045,P0158,Lulu Beauty Body Lotion 400ml,Personal Care,2025-10-21,7,15.0,10.07,24.29,141.1,11424.0,2038.0,GP-positive
+PR029,P0072,Savanna Value Butter 250g,Dairy,2026-09-28,7,5.0,8.04,15.86,97.3,1643.0,2465.0,GP-positive
+PR036,P0159,Savanna Value Body Lotion 400ml,Personal Care,2025-12-13,14,10.0,10.25,17.0,65.9,7640.0,2817.0,GP-positive
+PR006,P0139,Nyota Clean Bleach 750ml,Household & Cleaning,2025-12-11,7,10.0,15.57,43.86,181.7,5311.0,3389.0,GP-positive
+PR010,P0132,Savanna Value Bar Soap 800g,Household & Cleaning,2026-06-25,7,10.0,32.5,63.14,94.3,7691.0,3472.0,GP-positive
+PR008,P0166,Afya Care Roll-on Deodorant,Personal Care,2025-12-23,7,10.0,9.43,20.57,118.2,5026.0,3647.0,GP-positive

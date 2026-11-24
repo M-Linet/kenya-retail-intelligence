@@ -1,0 +1,133 @@
+{
+  "staged_rows": {
+    "branches": 12,
+    "products": 203,
+    "customers": 9090,
+    "promotions": 110,
+    "transactions": 291157,
+    "transaction_items": 1205079,
+    "inventory": 249985
+  },
+  "clean_rows": {
+    "branches": 12,
+    "products": 203,
+    "customers": 9000,
+    "promotions": 110,
+    "transactions": 289937,
+    "transaction_items": 1198181,
+    "returns": 2996,
+    "inventory_snapshots": 249487
+  },
+  "quarantined": {
+    "transactions": 61,
+    "transaction_items": 298
+  },
+  "exceptions_by_issue": [
+    {
+      "source_table": "customers",
+      "issue": "exact duplicate row",
+      "n": 90
+    },
+    {
+      "source_table": "customers",
+      "issue": "missing county",
+      "n": 360
+    },
+    {
+      "source_table": "customers",
+      "issue": "placeholder registration date 1900-01-01",
+      "n": 7
+    },
+    {
+      "source_table": "customers",
+      "issue": "segment label casing",
+      "n": 150
+    },
+    {
+      "source_table": "inventory",
+      "issue": "exact duplicate row",
+      "n": 498
+    },
+    {
+      "source_table": "inventory",
+      "issue": "negative stock count (sold before receipt posted)",
+      "n": 50
+    },
+    {
+      "source_table": "products",
+      "issue": "leading/trailing whitespace in name",
+      "n": 12
+    },
+    {
+      "source_table": "products",
+      "issue": "missing brand",
+      "n": 6
+    },
+    {
+      "source_table": "products",
+      "issue": "missing unit_cost",
+      "n": 3
+    },
+    {
+      "source_table": "products",
+      "issue": "non-standard category label",
+      "n": 18
+    },
+    {
+      "source_table": "promotions",
+      "issue": "end_date before start_date",
+      "n": 2
+    },
+    {
+      "source_table": "transaction_items",
+      "issue": "exact duplicate row",
+      "n": 3604
+    },
+    {
+      "source_table": "transaction_items",
+      "issue": "negative quantity",
+      "n": 2996
+    },
+    {
+      "source_table": "transaction_items",
+      "issue": "parent transaction quarantined or missing",
+      "n": 238
+    },
+    {
+      "source_table": "transaction_items",
+      "issue": "quantity >= 100 on non-business basket",
+      "n": 60
+    },
+    {
+      "source_table": "transaction_items",
+      "issue": "zero unit_price",
+      "n": 35
+    },
+    {
+      "source_table": "transactions",
+      "issue": "branch_id not in branch master",
+      "n": 40
+    },
+    {
+      "source_table": "transactions",
+      "issue": "exact duplicate row",
+      "n": 1159
+    },
+    {
+      "source_table": "transactions",
+      "issue": "missing payment method",
+      "n": 5797
+    },
+    {
+      "source_table": "transactions",
+      "issue": "non-standard payment label",
+      "n": 13819
+    },
+    {
+      "source_table": "transactions",
+      "issue": "timestamp outside data period (likely year typo)",
+      "n": 21
+    }
+  ],
+  "seconds": 33.8
+}
