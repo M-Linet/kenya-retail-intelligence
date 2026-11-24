@@ -73,43 +73,59 @@ erDiagram
     PRODUCTS ||--o{ RETURNS : "returned"
     BRANCHES ||--o{ INVENTORY_SNAPSHOTS : "counts"
     PRODUCTS ||--o{ INVENTORY_SNAPSHOTS : "counted"
-    BRANCHES { varchar branch_id PK
-               varchar county
-               varchar branch_type
-               date opening_date }
-    PRODUCTS { varchar product_id PK
-               varchar category
-               varchar brand
-               numeric unit_cost }
-    CUSTOMERS { varchar customer_id PK
-                varchar customer_segment
-                date registration_date }
-    TRANSACTIONS { varchar transaction_id PK
-                   timestamp transaction_ts
-                   varchar branch_id FK
-                   varchar customer_id FK
-                   varchar payment_method }
-    TRANSACTION_ITEMS { bigint transaction_item_id PK
-                        varchar transaction_id FK
-                        varchar product_id FK
-                        int quantity
-                        numeric unit_price
-                        numeric discount_amount
-                        varchar promotion_id FK }
-    PROMOTIONS { varchar promotion_id PK
-                 varchar product_id FK
-                 date start_date
-                 date end_date
-                 numeric discount_percentage }
-    INVENTORY_SNAPSHOTS { bigint inventory_id PK
-                          varchar branch_id FK
-                          varchar product_id FK
-                          date snapshot_date
-                          int stock_quantity
-                          int reorder_level }
-    RETURNS { bigint return_line_id PK
-              varchar transaction_id FK
-              int quantity_returned }
+    BRANCHES {
+        varchar branch_id PK
+        varchar county
+        varchar branch_type
+        date opening_date
+    }
+    PRODUCTS {
+        varchar product_id PK
+        varchar category
+        varchar brand
+        numeric unit_cost
+    }
+    CUSTOMERS {
+        varchar customer_id PK
+        varchar customer_segment
+        date registration_date
+    }
+    TRANSACTIONS {
+        varchar transaction_id PK
+        timestamp transaction_ts
+        varchar branch_id FK
+        varchar customer_id FK
+        varchar payment_method
+    }
+    TRANSACTION_ITEMS {
+        bigint transaction_item_id PK
+        varchar transaction_id FK
+        varchar product_id FK
+        int quantity
+        numeric unit_price
+        numeric discount_amount
+        varchar promotion_id FK
+    }
+    PROMOTIONS {
+        varchar promotion_id PK
+        varchar product_id FK
+        date start_date
+        date end_date
+        numeric discount_percentage
+    }
+    INVENTORY_SNAPSHOTS {
+        bigint inventory_id PK
+        varchar branch_id FK
+        varchar product_id FK
+        date snapshot_date
+        int stock_quantity
+        int reorder_level
+    }
+    RETURNS {
+        bigint return_line_id PK
+        varchar transaction_id FK
+        int quantity_returned
+    }
 ```
 
 ```mermaid
@@ -200,7 +216,7 @@ See §6. The most important: findings come from simulated data, and the promotio
 Requirements: Python 3.10+, PostgreSQL 14+ (tested on 16).
 
 ```bash
-git clone https://github.com/<your-username>/kenya-retail-intelligence.git
+git clone https://github.com/M-Linet/kenya-retail-intelligence.git
 cd kenya-retail-intelligence
 python -m venv .venv && .venv\Scripts\activate        # Windows  (macOS/Linux: source .venv/bin/activate)
 pip install -r requirements.txt
