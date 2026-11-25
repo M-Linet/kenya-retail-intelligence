@@ -61,6 +61,11 @@
           "name": "savanna_theme.json",
           "path": "savanna_theme.json",
           "type": "CustomTheme"
+        },
+        {
+          "name": "kikoi_strip.png",
+          "path": "kikoi_strip.png",
+          "type": "Image"
         }
       ]
     }

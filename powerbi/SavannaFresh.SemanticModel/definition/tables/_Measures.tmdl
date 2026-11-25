@@ -141,6 +141,19 @@ table _Measures
 		displayFolder: 3 Time intelligence
 		lineageTag: cf8b9c59-3cfa-57b1-8e05-4a76cd6b5602
 
+	measure 'Revenue Growth Y2 vs Y1 %' =
+			VAR y2 = CALCULATE ( [Revenue], KEEPFILTERS ( dim_date[date] >= DATE ( 2025, 11, 1 ) ) )
+			VAR y1 = CALCULATE ( [Revenue], KEEPFILTERS ( dim_date[date] < DATE ( 2025, 11, 1 ) ) )
+			RETURN IF ( SELECTEDVALUE ( dim_branch[is_like_for_like], TRUE () ) && NOT ISBLANK ( y1 ) && NOT ISBLANK ( y2 ), DIVIDE ( y2 - y1, y1 ) )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 3 Time intelligence
+		lineageTag: dff5578d-2629-5250-86f7-f7f300320e9c
+
+	measure 'LFL Growth Y2 vs Y1 %' = CALCULATE ( [Revenue Growth Y2 vs Y1 %], dim_branch[is_like_for_like] = TRUE () )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 3 Time intelligence
+		lineageTag: 04aa0795-6f56-5a59-8c5f-286b3d26d5b4
+
 	measure 'Avg Daily Revenue' = DIVIDE ( [Revenue], COUNTROWS ( dim_date ) )
 		formatString: #,0
 		displayFolder: 3 Time intelligence
@@ -255,6 +268,89 @@ table _Measures
 		displayFolder: 6 Promotions
 		lineageTag: 58c93262-151a-5ed0-b02d-5ef7ad288e2a
 
+	measure 'Δ Revenue' =
+			VAR y2 = CALCULATE ( [Revenue], KEEPFILTERS ( dim_date[date] >= DATE ( 2025, 11, 1 ) ) )
+			VAR y1 = CALCULATE ( [Revenue], KEEPFILTERS ( dim_date[date] < DATE ( 2025, 11, 1 ) ) )
+			RETURN IF ( NOT ISBLANK ( y1 ) && NOT ISBLANK ( y2 ), FORMAT ( DIVIDE ( y2 - y1, y1 ), "▲ 0.0%;▼ 0.0%;0.0%" ) & "  year 2 vs year 1" )
+		displayFolder: 8 Editorial
+		lineageTag: 5e870a9b-14f6-5490-ab29-6546fd87cc6f
+
+	measure 'Δ Gross Profit' =
+			VAR y2 = CALCULATE ( [Gross Profit], KEEPFILTERS ( dim_date[date] >= DATE ( 2025, 11, 1 ) ) )
+			VAR y1 = CALCULATE ( [Gross Profit], KEEPFILTERS ( dim_date[date] < DATE ( 2025, 11, 1 ) ) )
+			RETURN IF ( NOT ISBLANK ( y1 ) && NOT ISBLANK ( y2 ), FORMAT ( DIVIDE ( y2 - y1, y1 ), "▲ 0.0%;▼ 0.0%;0.0%" ) & "  year 2 vs year 1" )
+		displayFolder: 8 Editorial
+		lineageTag: d33256a9-3fde-55c7-a059-b20201fd5a6a
+
+	measure 'Δ Gross Margin' =
+			VAR y2 = CALCULATE ( [Gross Margin %], KEEPFILTERS ( dim_date[date] >= DATE ( 2025, 11, 1 ) ) )
+			VAR y1 = CALCULATE ( [Gross Margin %], KEEPFILTERS ( dim_date[date] < DATE ( 2025, 11, 1 ) ) )
+			RETURN IF ( NOT ISBLANK ( y1 ) && NOT ISBLANK ( y2 ), FORMAT ( ( y2 - y1 ) * 100, "▲ 0.0 pts;▼ 0.0 pts;0.0 pts" ) & "  year 2 vs year 1" )
+		displayFolder: 8 Editorial
+		lineageTag: a88b61bb-cb16-5a3f-a267-3293fab03add
+
+	measure 'Δ ATV' =
+			VAR y2 = CALCULATE ( [ATV], KEEPFILTERS ( dim_date[date] >= DATE ( 2025, 11, 1 ) ) )
+			VAR y1 = CALCULATE ( [ATV], KEEPFILTERS ( dim_date[date] < DATE ( 2025, 11, 1 ) ) )
+			RETURN IF ( NOT ISBLANK ( y1 ) && NOT ISBLANK ( y2 ), FORMAT ( DIVIDE ( y2 - y1, y1 ), "▲ 0.0%;▼ 0.0%;0.0%" ) & "  year 2 vs year 1" )
+		displayFolder: 8 Editorial
+		lineageTag: d13fe738-e7f9-5a0c-91c2-ccf4a4a7dd3f
+
+	measure 'Revenue Share of All Categories' = DIVIDE ( [Revenue], CALCULATE ( [Revenue], REMOVEFILTERS ( dim_product ) ) )
+		formatString: 0.0%
+		displayFolder: 8 Editorial
+		lineageTag: 54f98f40-e4cc-5592-9e2e-97f333772f0e
+
+	measure 'GP Share of All Categories' = DIVIDE ( [Gross Profit], CALCULATE ( [Gross Profit], REMOVEFILTERS ( dim_product ) ) )
+		formatString: 0.0%
+		displayFolder: 8 Editorial
+		lineageTag: 59149482-3f5b-5956-8ccb-95ca8cdccefc
+
+	measure 'LFL Text' = FORMAT ( [LFL Growth Y2 vs Y1 %], "▲ 0.0%;▼ 0.0%" ) & "  like-for-like (excl. Ruiru)"
+		displayFolder: 8 Editorial
+		lineageTag: 68fbfd27-1f2e-5576-90b6-f1b0b4e1c5fc
+
+	measure 'Promo Outcome Text' = FORMAT ( [Promotions Measured] - CALCULATE ( [Promotions Measured], promo_performance[outcome] = "GP-positive" ), "0" ) & " of " & FORMAT ( [Promotions Measured], "0" ) & " promotions lost gross profit"
+		displayFolder: 8 Editorial
+		lineageTag: d5b42e7b-ccc1-5ee9-a394-1494519c2340
+
+	measure 'Position Stock Value' = SUM ( fact_inventory_position[stock_value_at_cost] )
+		formatString: #,0
+		displayFolder: 8 Editorial
+		lineageTag: 740f6cfc-d475-5f21-a26b-4818ba1fb966
+
+	measure 'Colour Nyali' = IF ( SELECTEDVALUE ( dim_branch[branch_short] ) = "Nyali", "#eb6834", "#2a78d6" )
+		displayFolder: 8 Editorial
+		lineageTag: b1876f1f-a168-5986-9eeb-3730f055ad67
+
+	measure 'Colour Stockout Branch' = IF ( [Stockout Rate %] > 0.15, "#eb6834", "#2a78d6" )
+		displayFolder: 8 Editorial
+		lineageTag: 5f48be67-ecd4-5567-82db-0b1f09e04ac3
+
+	measure 'Colour Growth' = IF ( [Revenue Growth Y2 vs Y1 %] < 0, "#eb6834", "#2a78d6" )
+		displayFolder: 8 Editorial
+		lineageTag: cb05ff26-48da-56fc-86e3-4e3e673ef5fa
+
+	measure 'Colour Margin vs Chain' = IF ( [Margin vs Chain (pts)] < -1, "#eb6834", "#2a78d6" )
+		displayFolder: 8 Editorial
+		lineageTag: 3e24ee9a-2a48-578f-b1b4-1e524ec919cf
+
+	measure 'Colour Promo Outcome' = IF ( SELECTEDVALUE ( promo_performance[outcome] ) = "GP-negative", "#eb6834", "#2a78d6" )
+		displayFolder: 8 Editorial
+		lineageTag: 4a8c1581-8909-576e-aab2-985057180498
+
+	measure 'Colour Stock Status' = IF ( SELECTEDVALUE ( fact_inventory_position[stock_status] ) IN { "Slow-moving (>26 wks cover)", "No sales in 12 weeks" }, "#eb6834", "#2a78d6" )
+		displayFolder: 8 Editorial
+		lineageTag: 05fe7583-792f-5e38-ba58-b674a03c9738
+
+	measure 'Branch Status' = IF ( HASONEVALUE ( dim_branch[branch_short] ), IF ( [Stockout Rate %] > 0.15 || [Margin vs Chain (pts)] < -1 || [Revenue Growth Y2 vs Y1 %] < 0, "▲ Watch", "● On track" ) )
+		displayFolder: 8 Editorial
+		lineageTag: 544cf73f-390b-56ec-9db9-d2f6bc067ca1
+
+	measure 'Colour Branch Status' = IF ( [Stockout Rate %] > 0.15 || [Margin vs Chain (pts)] < -1 || [Revenue Growth Y2 vs Y1 %] < 0, "#eb6834", "#55534c" )
+		displayFolder: 8 Editorial
+		lineageTag: 6541b780-8e8d-533d-bc89-a158dd15fb25
+
 	measure 'YoY Colour' = IF ( [Revenue YoY %] < 0, "#eb6834", "#2a78d6" )
 		displayFolder: 7 Formatting
 		lineageTag: c45c9e58-caf5-564b-8ede-081e725555a5
@@ -262,19 +358,6 @@ table _Measures
 	measure 'Stockout Colour' = IF ( [Stockout Rate %] > 0.10, "#eb6834", "#2a78d6" )
 		displayFolder: 7 Formatting
 		lineageTag: 0bce40ce-614a-5a6b-9762-6dde83f7fedd
-
-	measure 'Revenue Growth Y2 vs Y1 %' =
-			VAR y2 = CALCULATE ( [Revenue], KEEPFILTERS ( dim_date[date] >= DATE ( 2025, 11, 1 ) ) )
-			VAR y1 = CALCULATE ( [Revenue], KEEPFILTERS ( dim_date[date] < DATE ( 2025, 11, 1 ) ) )
-			RETURN IF ( SELECTEDVALUE ( dim_branch[is_like_for_like], TRUE () ) && NOT ISBLANK ( y1 ) && NOT ISBLANK ( y2 ), DIVIDE ( y2 - y1, y1 ) )
-		formatString: +0.0%;-0.0%;0.0%
-		displayFolder: 3 Time intelligence
-		lineageTag: dff5578d-2629-5250-86f7-f7f300320e9c
-
-	measure 'LFL Growth Y2 vs Y1 %' = CALCULATE ( [Revenue Growth Y2 vs Y1 %], dim_branch[is_like_for_like] = TRUE () )
-		formatString: +0.0%;-0.0%;0.0%
-		displayFolder: 3 Time intelligence
-		lineageTag: 04aa0795-6f56-5a59-8c5f-286b3d26d5b4
 
 	column Dummy
 		dataType: string

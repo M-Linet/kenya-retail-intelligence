@@ -3,16 +3,16 @@ table fact_inventory
 
 	column inventory_id
 		dataType: int64
-		isHidden
 		formatString: 0
+		isHidden
 		lineageTag: ff1a692b-47a2-57f4-a2e8-c3a4679ccb9e
 		summarizeBy: none
 		sourceColumn: inventory_id
 
 	column snapshot_date
 		dataType: dateTime
-		isHidden
 		formatString: dd mmm yyyy
+		isHidden
 		lineageTag: 0e13df13-cc41-5fc4-8f46-35a7b57828e8
 		summarizeBy: none
 		sourceColumn: snapshot_date

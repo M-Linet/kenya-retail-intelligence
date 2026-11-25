@@ -3,8 +3,8 @@ table fact_sales
 
 	column transaction_item_id
 		dataType: int64
-		isHidden
 		formatString: 0
+		isHidden
 		lineageTag: 8d095ba9-d942-5db8-b088-a60444e59a2f
 		summarizeBy: none
 		sourceColumn: transaction_item_id
@@ -17,8 +17,8 @@ table fact_sales
 
 	column sale_date
 		dataType: dateTime
-		isHidden
 		formatString: dd mmm yyyy
+		isHidden
 		lineageTag: b50a29ac-5f7e-585b-b656-64eb8d232f00
 		summarizeBy: none
 		sourceColumn: sale_date
